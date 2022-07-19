@@ -1,0 +1,32 @@
+---
+permalink: reference-datasets-are-not-automatically-replicated-to-new-nodes-in-a-windows-failover-cluster.html 
+sidebar: sidebar 
+keywords: dataset, automatic, replicated, node, windows, failover, cluster 
+summary: Les jeux de données ne sont pas automatiquement répliqués sur de nouveaux nœuds dans un cluster de basculement Windows. 
+---
+= Les jeux de données ne sont pas automatiquement répliqués sur de nouveaux nœuds dans un cluster de basculement Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Numéro*
++
+Après avoir ajouté de nouveaux nœuds à un cluster de basculement Windows, les jeux de données ne sont pas automatiquement transférés vers le nouveau nœud.
+
+* *Cause*
++
+Lorsque vous ajoutez de nouveaux nœuds à un cluster de basculement Windows, SnapManager for Hyper-V ne réplique pas automatiquement les jeux de données existants sur les nouveaux nœuds du cluster.
+
+* * Action corrective*
++
+Exécutez l'assistant Modifier l'ensemble de données et cliquez sur *mettre à jour les règles d'horaires pour tous les nœuds membres de l'ensemble de données* sur la page Détails de base.
+
++
+Il doit être exécuté pour chaque jeu de données possédant des machines virtuelles.
+
+
+
+*Informations connexes*
+
+xref:task-modify-a-dataset.adoc[Modifier un jeu de données]

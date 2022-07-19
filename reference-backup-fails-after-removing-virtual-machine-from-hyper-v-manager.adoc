@@ -1,0 +1,31 @@
+---
+permalink: reference-backup-fails-after-removing-virtual-machine-from-hyper-v-manager.html 
+sidebar: sidebar 
+keywords: backup, fail, remove, virtual, machine, hyper-v, manager 
+summary: 'La sauvegarde échoue après le retrait d"une machine virtuelle d"Hyper-V Manager.' 
+---
+= La sauvegarde échoue après le retrait d'une machine virtuelle d'Hyper-V Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Numéro*
++
+Après avoir supprimé une machine virtuelle Hyper-V d'Hyper-V Manager, les opérations de sauvegarde échouent si vous ne mettez pas à jour le jeu de données associé à cette machine virtuelle.
+
+* *Cause*
++
+Ce problème survient lorsque vous supprimez une machine virtuelle Hyper-V de Hyper-V Manager et que vous tentez de réaliser une sauvegarde sans modifier le jeu de données. En outre, si vous avez recréés un serveur virtuel, vous devez modifier le jeu de données. SnapManager pour Hyper-V crée des jeux de données basés sur le GUID (VM ID). La sauvegarde échoue lorsqu'une machine virtuelle est supprimée, supprimée ou recréée, ce qui crée un nouveau GUID. Bien que cette opération n'entraîne pas la défaillance de l'ensemble du processus de sauvegarde, si un VM est supprimé, puis recréée par le même nom, elle n'est pas automatiquement protégée par SnapManager pour Hyper-V.
+
+* * Action corrective*
++
+Supprimez la machine virtuelle de la liste de jeux de données des machines virtuelles, et ajoutez tout serveur virtuel recréés au jeu de données.
+
+
+
+*Informations connexes*
+
+xref:concept-configure-datasets.adoc[Configurez des datasets]
+
+xref:task-modify-a-dataset.adoc[Modifier un jeu de données]

@@ -1,0 +1,33 @@
+---
+permalink: task-create-a-dataset.html 
+sidebar: sidebar 
+keywords: create, creating, dataset, virtual, machine, resource, protection, requirement 
+summary: Vous pouvez créer des jeux de données pour les ressources de machines virtuelles qui partagent les mêmes exigences de protection. Vous pouvez ajouter des machines virtuelles à plusieurs jeux de données, selon vos besoins. 
+---
+= Créez un jeu de données
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez créer des jeux de données pour les ressources de machines virtuelles qui partagent les mêmes exigences de protection. Vous pouvez ajouter des machines virtuelles à plusieurs jeux de données, selon vos besoins.
+
+Vous devez disposer des informations suivantes :
+
+* Nom et description du jeu de données
+* Ressources de machine virtuelle que vous prévoyez d'ajouter au jeu de données
+
+
+Les disques dédiés et partagés qui appartiennent au même cluster hôte ne doivent pas être placés dans le même jeu de données. L'ajout de ces types de ressources à un jeu de données unique peut entraîner l'échec de la sauvegarde du jeu de données. Vous ne pouvez disposer que d'un seul type de serveur virtuel par jeu de données : NAS ou SAN. Vous ne pouvez pas avoir de jeux de données en mode mixte.
+
+La case à cocher Valider le jeu de données est sélectionnée par défaut. SnapManager for Hyper-V vérifie s'il existe des erreurs de configuration dans toutes les VM lors de la création ou de la modification d'un jeu de données. Vous devez vous assurer que la case n'est pas cochée si vous ne souhaitez pas activer la validation du jeu de données.
+
+.Étapes
+. Dans le volet de navigation, cliquez sur menu :protection[Datasets].
+. Dans le volet actions, cliquez sur *Créer un jeu de données*.
+. Complétez les pages de l'assistant.
+
+
+Vous devez ensuite ajouter des règles de protection au dataset que vous avez créé.

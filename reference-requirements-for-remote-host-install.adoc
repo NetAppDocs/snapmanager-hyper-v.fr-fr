@@ -1,0 +1,56 @@
+---
+permalink: reference-requirements-for-remote-host-install.html 
+sidebar: sidebar 
+keywords: remote, host, install, wizard, snapmanager, hyper-v, host, node, require, detail, requirement 
+summary: 'Avant d"utiliser l"assistant d"installation d"hôtes à distance pour installer SnapManager pour Hyper-V à distance sur un hôte ou un nœud, vous devez rassembler les informations requises sur l"hôte.' 
+---
+= Conditions requises pour l'utilisation de l'assistant d'installation de l'hôte à distance
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Avant d'utiliser l'assistant d'installation d'hôtes à distance pour installer SnapManager pour Hyper-V à distance sur un hôte ou un nœud, vous devez rassembler les informations requises sur l'hôte.
+
+Vous pouvez accéder à l'assistant installation de l'hôte à distance à partir du volet actions de la fenêtre protection. Elle vous permet d'installer ou de désinstaller SnapManager for Hyper-V à distance sur des nœuds ou hôtes autonomes et de cluster.
+
+Si vous ajoutez un hôte sans SnapManager pour Hyper-V, l'assistant Ajout d'hôte vous invite à l'installer sur l'hôte.
+
+* *Installer ou désinstaller*
++
+Vous devez choisir d'utiliser l'assistant pour installer ou désinstaller SnapManager for Hyper-V à distance sur les hôtes ou les nœuds.
+
+* *Par serveur ou par stockage*
++
+Vous devez choisir d'installer SnapManager pour Hyper-V sur une base par serveur ou par stockage.
+
+* *Nom d'hôte/IP*
++
+Vous devez indiquer le nom ou l'adresse IP de l'hôte sur lequel vous souhaitez installer SnapManager pour Hyper-V. Vous pouvez sélectionner *Parcourir...* pour rechercher l'hôte ou le nœud.
+
+* *Port*
++
+Vous devez fournir le numéro de port pour vous connecter à l'hôte ou au nœud.
+
+* *Clé de licence SMHV*
++
+Vous devez fournir la clé de licence SnapManager pour Hyper-V.
+
+* *Clé de licence SDW*
++
+Vous devez fournir la clé de licence SnapDrive pour Windows.
+
+* *Nom d'utilisateur*
++
+Vous devez fournir le nom d'utilisateur au niveau de l'administrateur de l'hôte ou du nœud au format _domain\username_.
+
+* *Mot de passe*
++
+Vous devez saisir le mot de passe d'hôte ou de nœud.
+
+* *Confirmer le mot de passe*
++
+Vous devez saisir à nouveau le mot de passe de l'hôte ou du nœud pour confirmation.
+
+

@@ -1,0 +1,14 @@
+---
+permalink: concept-configure-hosts.html 
+sidebar: sidebar 
+keywords: add, view, remove, hyper-v, parent, host, cluster, snapmanager, configuring, configure 
+summary: 'Vous pouvez ajouter, afficher et supprimer les hôtes ou clusters parents Hyper-V à l"aide de SnapManager for Hyper-V.' 
+---
+= Configurer les hôtes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez ajouter, afficher et supprimer les hôtes ou clusters parents Hyper-V à l'aide de SnapManager for Hyper-V.

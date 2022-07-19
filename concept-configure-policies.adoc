@@ -1,0 +1,14 @@
+---
+permalink: concept-configure-policies.html 
+sidebar: sidebar 
+keywords: add, modify, delete, policies, policy, associate, dataset, protect, data, configuring, configure 
+summary: Vous pouvez ajouter, modifier ou supprimer des règles associées aux jeux de données afin de protéger vos données. 
+---
+= configurez des règles
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez ajouter, modifier ou supprimer des règles associées aux jeux de données afin de protéger vos données.

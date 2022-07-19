@@ -1,0 +1,20 @@
+---
+permalink: concept-event-notification-settings.html 
+sidebar: sidebar 
+keywords: configure, configuring, event, notification, setting, send, e-mail, syslog, autosupport, message 
+summary: 'Vous pouvez configurer les paramètres de notification d"événement pour envoyer des messages électroniques, Syslog et AutoSupport en cas d"événement.' 
+---
+= Paramètres de notification d'événement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez configurer les paramètres de notification d'événement pour envoyer des messages électroniques, Syslog et AutoSupport en cas d'événement.
+
+Si les paramètres de notification d'événement ne sont pas configurés lorsqu'un hôte parent Hyper-V est ajouté à SnapManager pour Hyper-V, vous pouvez configurer ces paramètres ultérieurement à l'aide de l'assistant de configuration.
+
+Vous pouvez modifier les paramètres de notification d'événement à l'aide de l'assistant de configuration, même après l'ajout de l'hôte à SnapManager for Hyper-V.
+
+Vous pouvez configurer les paramètres de notification d'événement avant de pouvoir ajouter des ressources de machine virtuelle à un jeu de données.

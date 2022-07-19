@@ -1,0 +1,38 @@
+---
+permalink: reference-license-requirements.html 
+sidebar: sidebar 
+keywords: run, snapmanager, hyper-v, select, host-based, storage, system, license, installation, license 
+summary: 'Pour exécuter SnapManager pour Hyper-V, vous devez sélectionner des licences basées sur l"hôte ou du système de stockage lors de l"installation des licences.' 
+---
+= Conditions de licence
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Pour exécuter SnapManager pour Hyper-V, vous devez sélectionner des licences basées sur l'hôte ou du système de stockage lors de l'installation des licences.
+
+
+
+== Licence de suite SnapManager
+
+Une licence de suite SnapManager est requise sur le système hôte Windows. Vous pouvez choisir entre une licence basée sur l'hôte et une licence pour le système de stockage.
+
+
+
+== Par licence serveur
+
+Il s'agit également d'une licence _basée sur l'hôte_. Si vous sélectionnez une licence basée sur l'hôte, vous devez fournir une clé de licence de suite SnapManager au cours de l'installation. Vous pourrez la modifier ultérieurement si nécessaire. Vous pouvez modifier la clé de licence après l'installation en cliquant sur *Paramètres de licence* dans la fenêtre Bienvenue de SnapManager pour Hyper-V. Chaque hôte parent requiert une licence de suite SnapManager.
+
+
+
+== Par licence de système de stockage
+
+C'est également ce que l'on appelle _Storage system Licensing_. Si vous sélectionnez une licence pour les systèmes de stockage, vous devez ajouter la licence de la suite SnapManager à tous les systèmes de stockage pour exécuter les opérations SnapManager for Hyper-V.
+
+
+
+== Par licence système client
+
+Vous devez utiliser cette option de licence lorsque vous installez la console de gestion.

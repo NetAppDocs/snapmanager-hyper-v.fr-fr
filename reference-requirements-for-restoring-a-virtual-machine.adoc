@@ -1,0 +1,71 @@
+---
+permalink: reference-requirements-for-restoring-a-virtual-machine.html 
+sidebar: sidebar 
+keywords: restore, virtual, machine, backup, copy, requirement 
+summary: 'Pour restaurer une machine virtuelle à partir d"une copie de sauvegarde, vous devez d"abord déterminer comment restaurer la copie de sauvegarde.' 
+---
+= Conditions requises pour la restauration d'une machine virtuelle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Pour restaurer une machine virtuelle à partir d'une copie de sauvegarde, vous devez d'abord déterminer comment restaurer la copie de sauvegarde.
+
+
+
+== Nom de la copie de sauvegarde de machine virtuelle
+
+Vous devez décider de la copie de sauvegarde à restaurer.
+
+Toutes les copies de sauvegarde sont répertoriées par nom dans le volet sauvegardes de la fenêtre Recovery Management.
+
+
+
+== Type de copie de sauvegarde de VM
+
+La restauration d'une machine virtuelle depuis une sauvegarde cohérente avec les applications s'effectue en coordination avec VSS. Hyper-V VSS Writer supprime la machine virtuelle avant de la restaurer et enregistre celle-ci sur Hyper-V Manager une fois l'opération de restauration terminée.
+
+La restauration d'une machine virtuelle à partir d'une sauvegarde cohérente après panne n'implique pas VSS. La machine virtuelle est éteinte avant l'opération de restauration. Lorsque vous restaurez à partir d'une sauvegarde cohérente après panne, la machine virtuelle doit exister. La restauration d'une machine virtuelle supprimée à partir d'une sauvegarde cohérente après panne échoue.
+
+
+
+== État de la copie de sauvegarde de la machine virtuelle
+
+Vous devez déterminer si la machine virtuelle existe toujours.
+
+Si la machine virtuelle n'existe plus, vous pouvez la restaurer si les LUN sur lesquelles la machine virtuelle a été créée existent toujours. Les LUN doivent avoir les mêmes lettres de lecteurs et GUID du volume Windows qu'au moment de la sauvegarde.
+
+Si vous supprimez une machine virtuelle dans Windows Server 2008 R2, vous pouvez restaurer la machine virtuelle à partir d'une sauvegarde cohérente avec les applications, mais dans Windows Server 2012 et Windows Server 2012 R2, vous pouvez restaurer une machine virtuelle supprimée à partir d'une sauvegarde cohérente avec les défaillances et les applications.
+
+Si la machine virtuelle a été supprimée de tous les datasets avant sa suppression, vous pouvez toujours la restaurer en sélectionnant Ressources non protégées et en sélectionnant une sauvegarde vers laquelle elle appartenait.
+
+
+
+== État de configuration de la copie de sauvegarde de VM
+
+Vous devez déterminer si la configuration de la machine virtuelle est identique à celle de la sauvegarde.
+
+Si la configuration actuelle de la machine virtuelle est différente de celle utilisée lors de la sauvegarde, SnapManager pour Hyper-V vous informe que la disposition de la machine virtuelle a changé et vous demande si vous souhaitez restaurer la configuration et les données de la machine virtuelle telles qu'elles existaient lors de la sauvegarde.
+
+
+NOTE: Étant donné que SnapManager pour Hyper-V ne sauvegarde pas la configuration de cluster de la machine virtuelle, elle ne peut pas restaurer la configuration du cluster. Si la configuration de l'ordinateur virtuel et du cluster est perdue, vous pouvez restaurer la machine virtuelle à partir de SnapManager pour Hyper-V, mais vous devez la rendre disponible manuellement au maximum.
+
+Si la machine virtuelle est configurée différemment de la configuration actuelle de la machine virtuelle dans la sauvegarde, vous devrez peut-être mettre à jour la configuration du cluster pour refléter tout disque dur virtuel (VHD) ajouté ou supprimé récemment.
+
+
+
+== État de la copie Snapshot
+
+Vous pouvez vérifier que les copies Snapshot de sauvegarde existent sur le système de stockage avant de tenter l'opération de restauration.
+
+
+
+== Redémarrage de la machine virtuelle
+
+Vous pouvez choisir de démarrer la machine virtuelle après sa restauration.
+
+*Informations connexes*
+
+http://technet.microsoft.com/library/ff182338(v=WS.10).aspx["Microsoft TechNet : clusters de basculement dans Windows Server 2008 R2"]

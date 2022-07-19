@@ -1,0 +1,22 @@
+---
+permalink: concept-perform-a-cluster-os-rolling-upgrade.html 
+sidebar: sidebar 
+keywords: cluster, operating, system, os, rolling, upgrade, snapmanager, perform, reducing, reduce, downtime 
+summary: 'Vous pouvez effectuer une mise à niveau propagée par un système d"exploitation de cluster (OS) afin de mettre à niveau les nœuds du système d"exploitation du cluster sans arrêter SnapManager pour Hyper-V. Cette fonctionnalité assure la conformité aux contrats de niveau de service en réduisant les temps d"indisponibilité.' 
+---
+= Effectuer une mise à niveau propagée du système d'exploitation du cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez effectuer une mise à niveau propagée par un système d'exploitation de cluster (OS) afin de mettre à niveau les nœuds du système d'exploitation du cluster sans arrêter SnapManager pour Hyper-V. Cette fonctionnalité assure la conformité aux contrats de niveau de service en réduisant les temps d'indisponibilité.
+
+Les clusters de basculement qui exécutent SnapManager pour Hyper-V peuvent être mis à niveau de Windows Server 2012 R2 vers Windows Server 2016 et Windows Server 2019 sans temps d'indisponibilité.
+
+Pour plus d'informations sur les avantages de la mise à niveau propagée par le système d'exploitation de cluster, les processus d'installation et les limites, consultez les informations associées.
+
+*Informations connexes*
+
+https://docs.microsoft.com/en-us/windows-server/failover-clustering/cluster-operating-system-rolling-upgrade["Microsoft TechNet : mise à niveau propagée du système d'exploitation du cluster"]

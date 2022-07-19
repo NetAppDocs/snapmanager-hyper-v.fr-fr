@@ -1,0 +1,31 @@
+---
+permalink: concept-cluster-shared-volume-2-0-architecture.html 
+sidebar: sidebar 
+keywords: windows, server, cluster, shared, volume, csv, backup 
+summary: 'Windows Server 2012 et version ultérieure propose de nouvelles fonctionnalités pour Cluster Shared Volume (CSV) 2.0 qui comprennent un nouveau système de fichiers, des modifications de CSV Writer, des modifications de CSV Shadow Copy et des améliorations de la sauvegarde CSV.' 
+---
+= CSV 2.0 dans Windows Server 2012 et versions ultérieures
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Windows Server 2012 et version ultérieure propose de nouvelles fonctionnalités pour Cluster Shared Volume (CSV) 2.0 qui comprennent un nouveau système de fichiers, des modifications de CSV Writer, des modifications de CSV Shadow Copy et des améliorations de la sauvegarde CSV.
+
+Windows Server 2012 et les versions ultérieures intègrent les modifications suivantes apportées à CSV 2.0 :
+
+* Le système de fichiers CSV (CSVFS) est disponible sur tous les nœuds du cluster en tant que nouveau système de fichiers distribué.
+* CSV writer sert les métadonnées au niveau du volume et du composant depuis le nœud qui ne demande pas de volumes CSV et agit comme proxy en incluant les enregistreurs Hyper-V du nœud distant pour la session de sauvegarde.
+* Le fournisseur de clichés instantanés CSV fait office de fournisseur de logiciels par défaut pour les volumes CSV et coordonne le gel VSS et le décongélation VSS sur tous les nœuds du cluster afin d'assurer la cohérence des applications et des pannes.
++
+Le fournisseur de clichés instantanés CSV garantit qu'un volume Snapshot CSV est inscriptible sur le nœud requérant.
+
+* CSV prend désormais en charge un volume Snapshot cohérent avec les applications à l'échelle de tous les CSV, pour plusieurs ordinateurs virtuels.
++
+Le volume CSV du volume Snapshot est exposé à tous les nœuds propriétaires de la machine virtuelle, afin de réaliser l'enregistrement automatique.
+
++
+Les CSV ne sont redirigés vers le mode E/S redirigée qu'au cours de la création du Snapshot et non pendant la sauvegarde.
+
+

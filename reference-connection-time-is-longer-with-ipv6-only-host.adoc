@@ -1,0 +1,25 @@
+---
+permalink: reference-connection-time-is-longer-with-ipv6-only-host.html 
+sidebar: sidebar 
+keywords: connection, time, ipv6-only, host 
+summary: Le temps de connexion est plus long avec un hôte IPv6 uniquement. 
+---
+= Le temps de connexion est plus long avec un hôte IPv6 uniquement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Numéro*
++
+Si vous travaillez dans un environnement mixte IPv4 et IPv6 et que vous ajoutez un hôte IPv6 uniquement à SnapManager pour Hyper-V, la connexion peut prendre plus de temps que la normale.
+
+* *Cause*
++
+Ce délai est dû au fait que SnapManager pour Hyper-V essaie d'abord le protocole IPv4.
+
+* * Action corrective*
++
+Pour contourner ce délai, ajoutez l'hôte dans le `\windows\system32\drivers\etc\hosts` fichier.
+
+

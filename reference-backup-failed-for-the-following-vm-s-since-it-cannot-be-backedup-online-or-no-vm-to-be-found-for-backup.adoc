@@ -1,0 +1,25 @@
+---
+permalink: reference-backup-failed-for-the-following-vm-s-since-it-cannot-be-backedup-online-or-no-vm-to-be-found-for-backup.html 
+sidebar: sidebar 
+keywords: backup, fail, follow, vm, backed, up, online 
+summary: 'La sauvegarde des machines virtuelles suivantes a échoué car elle ne peut pas être sauvegardée en ligne ou aucune machine virtuelle n"a été trouvée pour la sauvegarde.' 
+---
+= La sauvegarde des machines virtuelles suivantes a échoué car elle ne peut pas être sauvegardée en ligne ou aucune machine virtuelle n'a été trouvée pour la sauvegarde
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Message*
++
+`Backup Failed for the following VM(s) since it cannot be backed up online or NO VM to be found for backup`
+
+* *Description*
++
+Ce message s'affiche lors de la sauvegarde d'une machine virtuelle Windows 2012 dans un parent Hyper-V Windows 2008 R2 SP1 sans que l'option Autoriser la sauvegarde VM n'ait pas été activée.
+
+* * Action corrective*
++
+Pour les sauvegardes Windows 2012, exécutez la sauvegarde avec le `Allow saved state` Option de sauvegarde de machine virtuelle activée.
+
+

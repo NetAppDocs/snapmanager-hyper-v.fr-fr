@@ -1,0 +1,54 @@
+---
+permalink: concept-create-and-manage-backup-jobs-in-snapmanager-for-hyper-v.html 
+sidebar: sidebar 
+keywords: create, monitor, on-demand, backup, manage, schedule, snapmanager, hyper-v, creating, managing, application, crash 
+summary: Vous pouvez créer et surveiller des sauvegardes à la demande ou gérer des sauvegardes planifiées dans SnapManager for Hyper-V. 
+---
+= Créer et gérer des tâches de sauvegarde dans SnapManager for Hyper-V.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez créer et surveiller des sauvegardes à la demande ou gérer des sauvegardes planifiées dans SnapManager for Hyper-V. Vous pouvez également effectuer deux types de tâches de sauvegarde avec SnapManager pour Hyper-V : cohérentes avec les applications et les défaillances.
+
+
+
+== À propos des sauvegardes SnapManager pour Hyper-V.
+
+Vous pouvez créer des tâches de sauvegarde à la demande et les exécuter quand vous le souhaitez ou vous pouvez créer des tâches de sauvegarde planifiées à l'aide de stratégies associées à des jeux de données. Une tâche de sauvegarde à la demande peut inclure des stratégies de conservation et de réplication ainsi que des scripts à exécuter avant et après la sauvegarde. Vous pouvez créer, modifier, afficher et supprimer les stratégies qui composent les tâches de sauvegarde planifiées.
+
+
+
+== Types de tâches de sauvegarde SnapManager pour Hyper-V peut fonctionner
+
+SnapManager pour Hyper-V permet d'effectuer deux types de tâches de sauvegarde : cohérentes avec les applications et les défaillances.
+
+
+
+== Tâches de sauvegarde cohérentes au niveau des applications
+
+Les tâches de sauvegarde cohérentes au niveau des applications sont complètes, fiables et consommatrices de ressources. Elles sont réalisées en coordination avec Microsoft Volume Shadow Copy Service (VSS), afin de s'assurer que chaque application exécutée sur la machine virtuelle est exécutée avant de créer une copie Snapshot. Cette méthode de sauvegarde garantit la cohérence des données des applications. Vous pouvez l'utiliser pour restaurer les machines virtuelles et les applications qui s'exécutent sur celles-ci. Toutefois, les tâches de sauvegarde cohérentes au niveau des applications prennent du temps et peuvent s'avérer complexes.
+
+
+
+== Tâches de sauvegarde cohérentes après panne
+
+Les tâches de sauvegarde cohérentes après panne sont des copies Snapshot rapides de toutes les LUN utilisées par les machines virtuelles impliquées dans un jeu de données. Les copies de sauvegarde qui en résultent sont similaires aux captures de données des machines virtuelles qui tombent en panne ou sont brutalement hors tension. Les tâches de sauvegarde cohérentes après panne constituent un moyen rapide de capturer les données, mais elles doivent être présentes pour être restaurées à partir d'une sauvegarde cohérente après panne. Les tâches de sauvegarde cohérentes après panne ne sont pas destinées à remplacer des tâches de sauvegarde cohérentes au niveau des applications.
+
+
+
+== Exigences et limites de la sauvegarde de SnapManager pour Hyper-V.
+
+Vous devez connaître les exigences et limites d'une sauvegarde SnapManager pour Hyper-V :
+
+* Les opérations de sauvegarde et de restauration ne sont pas prises en charge si vous effectuez un basculement ou un rétablissement sur une configuration MetroCluster. Si une opération de sauvegarde et de restauration et une opération de basculement ou de rétablissement s'exécutent simultanément, le `.vhd` Le format de fichier d'une machine virtuelle peut être modifié en `.avhdx` Dans les systèmes Windows Server 2012 R2. La machine virtuelle n'est pas affectée par cette modification.
+* Le `distributed application-consistent backup` Option permettant à plusieurs machines virtuelles s'exécutant sur les nœuds de cluster partenaires d'être cohérentes dans une seule copie Snapshot matérielle créée à partir du nœud de sauvegarde. Cette option est prise en charge pour tous les VM s'exécutant sur un volume CSV 2.0 Windows sur plusieurs nœuds d'un cluster de basculement Windows.
+* Dans 7-mode, les tâches de sauvegarde cohérentes au niveau des applications font appel à VSS Hardware Provider pour effectuer deux copies Snapshot. Il s'agit de copies appelées `snapshot_name` et `snapshot_name_backup`. Les deux copies Snapshot sont effectuées pour faciliter la restauration automatique lors de la sauvegarde VSS.
+* Dans les environnements en cluster, les sauvegardes cohérentes au niveau des applications ne nécessitent qu'une seule copie Snapshot pour le processus de restauration automatique. Les clones SIS sont utilisés pour effectuer une restauration automatique et, une fois la restauration automatique terminée, la première copie Snapshot (`snapshot_name`) est supprimé.
+* Chaque volume Windows de la machine virtuelle doit disposer d'au moins 300 Mo d'espace disque disponible. Cela inclut les volumes Windows correspondant aux disques durs virtuels, aux LUN iSCSI et aux disques pass-through connectés à la machine virtuelle.
+* Une tâche de sauvegarde cohérente après panne crée toujours une seule copie Snapshot. L'intégration n'a pas été VSS.
+* Plusieurs tâches de sauvegarde cohérentes après panne peuvent s'exécuter en parallèle. Une tâche de sauvegarde cohérente après panne peut s'exécuter en parallèle d'une tâche de sauvegarde cohérente au niveau des applications.
+* `Allow Saved State Backup` ne s'applique pas aux tâches de sauvegarde cohérentes avec les défaillances.
+

@@ -1,0 +1,28 @@
+---
+permalink: task-delete-the-previously-exported-vm-from-the-non-data-ontap-host.html 
+sidebar: sidebar 
+keywords: import, virtual, machine, vm, successful, delete, non-ontap, host, deleting 
+summary: 'Une fois la machine virtuelle (VM) importée avec succès, vous pouvez supprimer la machine virtuelle de l"hôte non ONTAP.' 
+---
+= Suppression du serveur virtuel précédemment exporté depuis l'hôte non ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Une fois la machine virtuelle (VM) importée avec succès, vous pouvez supprimer la machine virtuelle de l'hôte non ONTAP.
+
+La machine virtuelle doit avoir été importée avec succès.
+
+. Sélectionnez l'hôte non ONTAP sur lequel la machine virtuelle a été hébergée à l'origine.
+. Dans le volet machines virtuelles, cliquez avec le bouton droit de la souris sur le nom de la machine virtuelle que vous avez exportée précédemment.
+. Cliquez sur *Supprimer*.
++
+Une fenêtre s'ouvre, vous demandant de confirmer la suppression de la machine virtuelle.
+
+. Cliquez sur *Supprimer*.
++
+La machine virtuelle est supprimée de son hôte d'origine.
+
+

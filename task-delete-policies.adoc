@@ -1,0 +1,25 @@
+---
+permalink: task-delete-policies.html 
+sidebar: sidebar 
+keywords: delete, policy, policies, deleting, dataset 
+summary: 'Vous pouvez supprimer une règle d"un jeu de données lorsqu"elle n"est plus nécessaire.' 
+---
+= Supprimer des règles
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez supprimer une règle d'un jeu de données lorsqu'elle n'est plus nécessaire.
+
+.Étapes
+. Dans le volet de navigation, cliquez sur menu :protection[Datasets].
+. Sélectionnez le jeu de données contenant la stratégie que vous souhaitez supprimer.
+. Dans le volet stratégies, sélectionnez la stratégie spécifique que vous souhaitez supprimer.
+. Dans le volet actions, cliquez sur *Supprimer* et cliquez sur *OK* pour supprimer la stratégie.
++
+La suppression de la stratégie supprime également les travaux planifiés de tous les hôtes membres du jeu de données.
+
+

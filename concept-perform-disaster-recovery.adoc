@@ -1,0 +1,14 @@
+---
+permalink: concept-perform-disaster-recovery.html 
+sidebar: sidebar 
+keywords: disaster, recovery, feature, ensure, disaster, circumstance, critical, protect, data, primary, storage, powershell, perform 
+summary: 'En cas d"incident ou d"autre circonstance, la fonction de reprise après incident vous permet de garantir l"accessibilité des données stratégiques protégées sur vos sites de stockage principal et l"accès à la copie sauvegardée de ces données via vos sites de stockage secondaire. La reprise après incident peut uniquement être effectuée via l"interface PowerShell.' 
+---
+= Réaliser la reprise sur incident
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+En cas d'incident ou d'autre circonstance, la fonction de reprise après incident vous permet de garantir l'accessibilité des données stratégiques protégées sur vos sites de stockage principal et l'accès à la copie sauvegardée de ces données via vos sites de stockage secondaire. La reprise après incident peut uniquement être effectuée via l'interface PowerShell.

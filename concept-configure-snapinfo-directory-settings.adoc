@@ -1,0 +1,22 @@
+---
+permalink: concept-configure-snapinfo-directory-settings.html 
+sidebar: sidebar 
+keywords: configure, configuring, snapinfo, setting, host, virtual, machine, resource, dataset, action, directory 
+summary: Vous devez configurer les paramètres SnapInfo pour un hôte avant de pouvoir ajouter les ressources des machines virtuelles au sein de cet hôte à un jeu de données. 
+---
+= Configurez les paramètres du répertoire SnapInfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous devez configurer les paramètres SnapInfo pour un hôte avant de pouvoir ajouter les ressources des machines virtuelles au sein de cet hôte à un jeu de données. Si les paramètres SnapInfo ne sont pas configurés lors de l'ajout d'un hôte Hyper-V à SnapManager pour Hyper-V, vous pouvez les configurer ultérieurement à l'aide de l'assistant de configuration ou de l'action *SnapInfo*.
+
+Vous pouvez également modifier les paramètres SnapInfo une fois que l'hôte a été ajouté à SnapManager pour Hyper-V. Cependant, si vous modifiez les paramètres de SnapInfo, vous devez déplacer manuellement tous les fichiers vers le nouvel emplacement. SnapManager pour Hyper-V ne les met pas à jour automatiquement. Si vous ne déplacez pas les fichiers, vous ne pouvez pas effectuer de restauration à partir de la copie de sauvegarde ou la gérer, et SnapManager pour Hyper-V ne répertorie pas la copie de sauvegarde.
+
+Depuis SnapManager pour Hyper-V, le chemin SnapInfo peut résider dans les volumes CSV (Cluster Shared volumes). Il peut également être stocké sur des partages SMB pour Windows Server 2012.
+
+*Informations connexes*
+
+http://technet.microsoft.com/library/jj612868.aspx["Microsoft TechNet : utilisez les volumes partagés de cluster dans un cluster de basculement"]

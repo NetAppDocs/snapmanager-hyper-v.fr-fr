@@ -1,0 +1,22 @@
+---
+permalink: concept-report-path-settings.html 
+sidebar: sidebar 
+keywords: configure, report, path, setting, store, snapmanager, hyper-v, operation, configure, virtual, machine, dataset 
+summary: Vous pouvez configurer les paramètres du chemin du rapport afin de pouvoir stocker des rapports pour les opérations SnapManager for Hyper-V. Vous devez configurer les paramètres du chemin du rapport avant de pouvoir ajouter des ressources de machine virtuelle à un jeu de données. 
+---
+= Paramètres du chemin du rapport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez configurer les paramètres du chemin du rapport afin de pouvoir stocker des rapports pour les opérations SnapManager for Hyper-V. Vous devez configurer les paramètres du chemin du rapport avant de pouvoir ajouter des ressources de machine virtuelle à un jeu de données.
+
+Si les paramètres du rapport ne sont pas configurés lorsqu'un hôte parent Hyper-V est ajouté à SnapManager pour Hyper-V, vous pouvez configurer (et même modifier) ces paramètres ultérieurement, à l'aide de l'Assistant de configuration.
+
+Si vous configurez les paramètres du chemin du rapport pour un cluster hôte parent, vous devez créer manuellement le répertoire des rapports sur chaque nœud du cluster. Le chemin du rapport ne doit pas résider sur un volume partagé (CSV) de cluster ou sur un LUN partagé.
+
+*Informations connexes*
+
+http://technet.microsoft.com/library/jj612868.aspx["Microsoft TechNet : utilisez les volumes partagés de cluster dans un cluster de basculement"]

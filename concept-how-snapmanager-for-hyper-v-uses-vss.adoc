@@ -1,0 +1,23 @@
+---
+permalink: concept-how-snapmanager-for-hyper-v-uses-vss.html 
+sidebar: sidebar 
+keywords: snapmanager, hyper-v, integration, microsoft, hyper-v, volume, shadow, copy, service, vss, quiesce, virtual, machine, vm, snapshot 
+summary: 'SnapManager for Hyper-V fournit l"intégration à Microsoft Hyper-V Volume Shadow Copy Service (VSS) pour suspendre une machine virtuelle (VM) avant de créer une copie Snapshot cohérente entre les applications de la machine virtuelle.' 
+---
+= Comment SnapManager for Hyper-V utilise VSS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+SnapManager for Hyper-V fournit l'intégration à Microsoft Hyper-V Volume Shadow Copy Service (VSS) pour suspendre une machine virtuelle (VM) avant de créer une copie Snapshot cohérente entre les applications de la machine virtuelle.
+
+SnapManager for Hyper-V est un VSS Requestor et coordonne le processus de sauvegarde afin de créer une copie Snapshot cohérente, à l'aide de VSS Hardware Provider pour Data ONTAP les serveurs virtuels Hyper-V exécutés sur SAN et le fournisseur VSS distant pour les serveurs virtuels Hyper-V exécutés sur le partage SMB 3.0.
+
+SnapManager pour Hyper-V vous permet d'effectuer des sauvegardes cohérentes au niveau des applications d'une machine virtuelle, si vous disposez de Microsoft Exchange, de Microsoft SQL ou de toute autre application compatible VSS s'exécutant sur des disques durs virtuels (VHD) sur la machine virtuelle. SnapManager pour Hyper-V s'assure de la cohérence des données applicatives lors de la sauvegarde, avec les enregistreurs dans la machine virtuelle.
+
+Vous pouvez également restaurer une machine virtuelle à partir d'une sauvegarde cohérente avec les applications. Les applications qui existent dans la machine virtuelle restaurent le même état qu'au moment de la sauvegarde. SnapManager pour Hyper-V restaure la machine virtuelle à son emplacement d'origine.
+
+
+NOTE: L'intégration VSS est disponible uniquement avec les sauvegardes cohérentes au niveau des applications. Les sauvegardes cohérentes après panne n'utilisent pas VSS.

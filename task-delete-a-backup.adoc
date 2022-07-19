@@ -1,0 +1,31 @@
+---
+permalink: task-delete-a-backup.html 
+sidebar: sidebar 
+keywords: delete, backup, associate, dataset, virtual, machine, deleting 
+summary: Vous pouvez supprimer une ou plusieurs sauvegardes associées à un jeu de données ou à une machine virtuelle. 
+---
+= Supprimer une sauvegarde
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez supprimer une ou plusieurs sauvegardes associées à un jeu de données ou à une machine virtuelle.
+
+.Étapes
+. Dans le volet de navigation, cliquez sur *Recovery*.
+. Sélectionnez la machine virtuelle dans le jeu de données contenant la sauvegarde à supprimer.
++
+Si vous supprimez une sauvegarde associée à un jeu de données, les sauvegardes associées à toutes les machines virtuelles appartenant à ce jeu de données sont également supprimées. Si vous supprimez une sauvegarde associée à une machine virtuelle, seule cette sauvegarde est supprimée.
+
+. Dans le volet sauvegardes, sélectionnez la sauvegarde à supprimer.
+. Cliquez sur *Supprimer*.
++
+La boîte de dialogue *Supprimer la sauvegarde* s'affiche. Vous pouvez supprimer les sauvegardes d'une machine virtuelle sélectionnée ou d'un jeu de données complet.
+
+. Sélectionnez l'option appropriée, puis cliquez sur *confirmer la suppression*.
++
+Vous pouvez afficher l'état de l'opération de suppression de sauvegarde dans la fenêtre d'état.
+
+

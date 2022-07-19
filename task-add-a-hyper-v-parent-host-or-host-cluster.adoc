@@ -1,0 +1,24 @@
+---
+permalink: task-add-a-hyper-v-parent-host-or-host-cluster.html 
+sidebar: sidebar 
+keywords: add, hyper-v, parent, host, cluster, back, up, restore, virtua, machine 
+summary: Vous pouvez ajouter un hôte ou un cluster hôte parent Hyper-V pour sauvegarder et restaurer vos machines virtuelles. 
+---
+= Ajoutez un hôte ou un cluster hôte parent Hyper-V
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez ajouter un hôte ou un cluster hôte parent Hyper-V pour sauvegarder et restaurer vos machines virtuelles.
+
+.Étapes
+. Dans le volet de navigation, cliquez sur *protection*.
+. Dans le volet actions, cliquez sur *Ajouter hôte*.
+. Exécutez l'assistant *Ajouter hôte*.
+
+
+Lorsque vous ajoutez un hôte à un cluster, les informations relatives au nouvel hôte ne s'affichent pas automatiquement dans l'interface graphique. Ajoutez manuellement les informations sur l'hôte au fichier xml dans le répertoire d'installation.
+
+SnapManager pour Hyper-V doit être installé sur chaque nœud du cluster. Si SnapManager pour Hyper-V n'est pas installé, vous êtes invité à exécuter l'assistant d'installation d'hôte à distance.

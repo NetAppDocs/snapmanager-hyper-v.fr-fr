@@ -1,0 +1,49 @@
+---
+permalink: concept-snapmanager-for-hyper-v-limitations.html 
+sidebar: sidebar 
+keywords: important, understand, snapmanager, hyper-v, limitation 
+summary: Il est important de bien comprendre que certaines fonctionnalités ne sont pas prises en charge dans SnapManager 2.1 et les versions ultérieures dans Hyper-V. 
+---
+= Liste des limites de SnapManager pour Hyper-V.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il est important de comprendre que certaines fonctionnalités ne sont pas prises en charge dans SnapManager 2.1 et versions ultérieures pour Hyper-V .
+
+* L'annulation, la suspension et la reprise des travaux de sauvegarde et de restauration ne sont pas prises en charge.
+* Les règles ne peuvent pas être copiées sur les jeux de données.
+* Le contrôle d'accès basé sur des rôles (RBAC) n'est pas pris en charge.
+* L'exclusion des disques durs virtuels (VHD) d'une tâche de sauvegarde SnapManager for Hyper-V Volume Shadow Copy Service (VSS) n'est pas prise en charge.
+* La restauration de fichiers uniques à partir d'une copie de sauvegarde n'est pas prise en charge de manière native.
+* La gestion de versions croisées n'est pas prise en charge, par exemple, vous ne pouvez pas utiliser la console client 1.2 pour gérer SnapManager 2.0 pour Hyper-V, et inversement.
+* Si vous commencez à restaurer une machine virtuelle Hyper-V et qu'une autre sauvegarde ou restauration de cette même machine virtuelle est en cours, la tentative échoue.
+* La restauration d'un serveur virtuel supprimé d'une copie de sauvegarde cohérente après panne est prise en charge uniquement pour Windows Server 2012.
+* L'exécution de différentes versions de SnapManager pour Hyper-V sur différents nœuds d'un cluster de basculement n'est pas prise en charge.
+* Les restaurations depuis SnapManager 2.1 pour Hyper-V ne sont pas prises en charge.
+* Les tâches de sauvegarde ou de restauration des machines virtuelles ne sont pas prises en charge lorsque les utilisateurs modifient le nœud de propriété du cluster lors de la sauvegarde ou de la restauration.
+* Les sauvegardes en mode mixte (des machines virtuelles contenant des fichiers sur des volumes CSV 2.0 et des partages SMB) ne sont pas prises en charge.
+* Après avoir migré le stockage d'une machine virtuelle vers un autre emplacement sous Windows Server 2012, vous ne pouvez pas effectuer la restauration sur cette machine virtuelle à partir des copies de sauvegarde effectuées avant la migration.
+* Sous Windows Server 2012, vous ne pouvez pas effectuer de tâche de sauvegarde dans laquelle le jeu de sauvegarde inclut à la fois un CSV (Cluster Shared Volume) et un disque partagé.
+* Lors de la configuration des paramètres de gestion de la connexion au stockage, vous ne pouvez pas utiliser le protocole RPC (Remote Procedure Call) ; vous pouvez utiliser uniquement les protocoles HTTP et HTTPS.
+* La création d'une sauvegarde cohérente avec les applications d'une machine virtuelle (VM) stockée sur un stockage NAS n'est pas prise en charge par le système d'exploitation Hyper-V. Windows Server 2012.
++
+Cette restriction ne s'applique pas aux sauvegardes cohérentes avec les défaillances. Elle s'applique uniquement au serveur Hyper-V gratuit, qui n'inclut pas les services de copie instantanée de partage de fichiers.
+
+* Le nom du commutateur virtuel d'un serveur virtuel doit être exactement le même pour les hôtes Windows principal et secondaire.
+* Les opérations de sauvegarde et de restauration requièrent une licence FlexClone lorsque les machines virtuelles Hyper-V sont déployées sur SMB 3.0.
+* La taille de LUN maximale prise en charge pour les opérations de restauration est de 14 To.
+* Les serveurs Hyper-V suivants ne prennent pas en charge les sauvegardes cohérentes entre les applications des machines virtuelles :
++
+** Microsoft Hyper-V Server 2016 (édition gratuite)
+** Microsoft Hyper-V Server 2019 (édition gratuite)
++
+Notez que cette limitation ne s'applique pas aux sauvegardes cohérentes après panne ou aux plates-formes Windows suivantes :
+
+** Microsoft Windows Server 2016 Standard et Datacenter Edition
+** Microsoft Windows Server 2019 Standard et Datacenter Edition
+
+
+

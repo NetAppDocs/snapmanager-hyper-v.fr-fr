@@ -1,0 +1,20 @@
+---
+permalink: concept-how-snapmanager-for-hyper-v-handles-saved-state-backups.html 
+sidebar: sidebar 
+keywords: default, behavior, snapmanager, hyper-v, backup, contain, virtual, machine, save, state, shut, down, saved-state 
+summary: 'Bien que le comportement par défaut de SnapManager pour Hyper-V provoque l"arrêt ou l"échec des sauvegardes contenant des machines virtuelles dont l"état est enregistré, vous pouvez effectuer une sauvegarde à l"état enregistré en déplaçant les machines virtuelles vers un jeu de données possédant une stratégie permettant les sauvegardes à l"état enregistré.' 
+---
+= Comment SnapManager pour Hyper-V gère les sauvegardes à état enregistré
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bien que le comportement par défaut de SnapManager pour Hyper-V provoque l'arrêt ou l'échec des sauvegardes contenant des machines virtuelles dont l'état est enregistré, vous pouvez effectuer une sauvegarde à l'état enregistré en déplaçant les machines virtuelles vers un jeu de données possédant une stratégie permettant les sauvegardes à l'état enregistré.
+
+Vous pouvez également créer ou modifier votre stratégie de jeu de données pour permettre une sauvegarde de machine virtuelle à état enregistré. Si vous choisissez cette option, SnapManager pour Hyper-V n'entraîne pas l'échec de la sauvegarde lorsque Hyper-V VSS Writer sauvegarde la machine virtuelle à l'aide de l'état enregistré ou effectue une sauvegarde hors ligne de la machine virtuelle. Toutefois, l'exécution d'une sauvegarde à l'état enregistré ou hors ligne peut entraîner des temps d'indisponibilité.
+
+*Informations connexes*
+
+http://technet.microsoft.com/library/cc753637(WS.10).aspx["Microsoft TechNet : Hyper-V"]

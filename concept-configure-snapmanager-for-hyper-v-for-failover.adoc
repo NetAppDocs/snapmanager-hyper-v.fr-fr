@@ -1,0 +1,43 @@
+---
+permalink: concept-configure-snapmanager-for-hyper-v-for-failover.html 
+sidebar: sidebar 
+keywords: enable, snapmanager, hyper-v, implementation, disaster, recovery, primary, secondary, host, powershell, failover, configure, configuring 
+summary: 'Pour activer pleinement l"implémentation de SnapManager pour Hyper-V pour la reprise sur incident, vous devez vous assurer que les hôtes principaux et secondaires ont la même configuration et que vous savez que vous pouvez effectuer la reprise sur incident à l"aide de PowerShell uniquement.' 
+---
+= Configuration de SnapManager pour Hyper-V pour le basculement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Pour activer pleinement l'implémentation de SnapManager pour Hyper-V pour la reprise sur incident, vous devez vous assurer que les hôtes principaux et secondaires ont la même configuration et que vous savez que vous pouvez effectuer la reprise sur incident à l'aide de PowerShell uniquement.
+
+Les types de configurations suivants prennent en charge la reprise après sinistre :
+
+* Hôte principal autonome et hôte Hyper-V secondaire autonome
+* Hôtes Hyper-V principaux et secondaires en cluster
+* CSV (Cluster Shared volumes) sur les hôtes Hyper-V principaux et secondaires
+
+
+Par exemple, une machine virtuelle (VM) en cluster sur un hôte principal doit être restaurée en tant que machine virtuelle de cluster, une machine virtuelle dédiée (autonome) doit être restaurée en tant que machine virtuelle dédiée et une machine virtuelle CSV doit être récupérée en tant que machine virtuelle CSV.
+
+Les LUN sur un hôte secondaire doivent être connectés de la même manière que leurs homologues sur l'hôte principal. C'est-à-dire que le type de LUN (dédié, partagé ou CSV) et le point de reanalyse des lettres des disques, du point de montage ou de CSV doivent être identiques sur les hôtes principal et secondaire. Grâce aux opérations de restauration SAN vers un autre emplacement de chemin, une lettre de lecteur différente peut être spécifiée pour l'opération de restauration de LUN sur un emplacement secondaire.
+
+
+NOTE: Les lettres de lecteur ou les CSV et les points de montage de volume sont pris en charge.
+
+L'exemple suivant montre une configuration de base de la reprise sur incident :
+
+* Le site A (principal) contient des systèmes de stockage et un système hôte Hyper-V autonome ou un cluster hôte Hyper-V.
++
+Les machines virtuelles exécutées sur ces hôtes résident sur le stockage Data ONTAP.
+
+* Le site B (secondaire) contient des systèmes de stockage et un hôte ou un cluster Hyper-V (identique à celui du site principal).
+* SnapDrive pour Windows et SnapManager pour Hyper-V sont installés sur les deux sites A et B.
+* La relation SnapMirror est initialisée depuis le site A vers le site B.
+* Sur le site A, un hôte ou un cluster Hyper-V ajouté à SnapManager pour Hyper-V et les machines virtuelles sont sauvegardées à l'aide de SnapManager pour Hyper-V.
++
+Règle à mettre à jour SnapMirror après la vérification de la sauvegarde. Après chaque sauvegarde, le site secondaire est mis à jour avec de nouvelles copies Snapshot des machines virtuelles et des copies SnapInfo.
+
+

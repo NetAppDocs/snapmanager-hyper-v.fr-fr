@@ -1,0 +1,37 @@
+---
+permalink: reference-web-service-client-channel-unable-to-connect-while-updating-the-dataset-to-the-new-node.html 
+sidebar: sidebar 
+keywords: web, service, client, channel, unable, connect, update, updating, dataset, new, node 
+summary: Le canal du client du service Web ne parvient pas à se connecter lors de la mise à jour du jeu de données sur le nouveau nœud. 
+---
+= Le canal du client du service Web ne parvient pas à se connecter lors de la mise à jour du jeu de données sur le nouveau nœud
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Numéro*
++
+Si un client de services Web n'est pas explicitement lancé, il ne pourra pas se connecter à SnapManager pour Hyper-V.
+
+* *Cause*
++
+SnapManager pour Hyper-V ne lance plus automatiquement un canal client de services Web. Si le canal du client du service Web ne peut pas se connecter lors de la mise à jour d'un jeu de données vers un nouveau nœud, cela peut être l'une des raisons suivantes :
+
++
+** Les services Web n'ont pas été démarrés.
+** SnapManager pour Hyper-V n'est pas installé.
+** L'hôte des services Web est en panne.
+
+
+* * Action corrective*
++
+Pour corriger ce comportement, assurez-vous d'avoir effectué les tâches suivantes :
+
++
+** Démarrer les services Web.
+** Installer SnapManager pour Hyper-V.
+** Redémarrez l'hôte des services Web.
+
+
+

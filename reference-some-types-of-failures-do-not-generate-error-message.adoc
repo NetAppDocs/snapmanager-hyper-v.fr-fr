@@ -1,0 +1,25 @@
+---
+permalink: reference-some-types-of-failures-do-not-generate-error-message.html 
+sidebar: sidebar 
+keywords: backup, failure, result, partial 
+summary: 'Certains types d"échecs de sauvegarde n"entraînent pas d"échec partiel de la sauvegarde.' 
+---
+= Certains types d'échecs de sauvegarde n'entraînent pas d'échec partiel de la sauvegarde
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Numéro*
++
+Si une machine virtuelle d'un jeu de données présente une erreur, SnapManager pour Hyper-V ne parvient pas à terminer la sauvegarde du jeu de données et, dans certains cas, ne génère pas de panne partielle. Dans ce cas, l'ensemble de la sauvegarde du jeu de données échoue.
+
+* *Exemple*
++
+Dans un scénario où un volume de système de stockage dépasse la limite de 255 copies Snapshot, SnapManager pour Hyper-V génère une panne partielle, même si le problème est associé à un sous-ensemble de machines virtuelles du jeu de données.
+
+* * Action corrective*
++
+Pour réussir l'opération de sauvegarde, vous devez corriger la machine virtuelle qui présente le problème. Si ce n'est pas possible, vous pouvez déplacer temporairement la machine virtuelle hors du jeu de données ou créer un jeu de données qui contient uniquement les machines virtuelles dont le problème n'est pas connu.
+
+

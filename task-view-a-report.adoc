@@ -1,0 +1,43 @@
+---
+permalink: task-view-a-report.html 
+sidebar: sidebar 
+keywords: view, report, dataset, virtual, machine, resource, manage, snapmanager, hyper-v 
+summary: Vous pouvez afficher un rapport sur un ensemble de données ou une ressource de machine virtuelle géré dans SnapManager for Hyper-V. 
+---
+= Afficher un rapport de l'ensemble de données
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez afficher un rapport sur un ensemble de données ou une ressource de machine virtuelle géré dans SnapManager for Hyper-V.
+
+.Étapes
+. Dans le volet de navigation, cliquez sur menu:Rapports[Datasets].
+. Sélectionnez le jeu de données ou la machine virtuelle qui contient le rapport que vous souhaitez afficher.
+. Dans le volet Rapports, cliquez sur l'onglet sauvegarde ou récupération.
+. Sélectionnez le rapport à afficher et cliquez sur *Afficher le rapport*.
++
+|===
+| Si vous souhaitez afficher... | Alors... 
+
+
+ a| 
+*rapport dataset*
+ a| 
+Vous pouvez afficher un rapport de sauvegarde.
+
+
+
+ a| 
+*rapport de machine virtuelle*
+ a| 
+Vous pouvez afficher un rapport de sauvegarde ou de restauration.
+
+|===
++
+Le rapport s'affiche dans une fenêtre distincte.
+
+

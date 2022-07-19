@@ -1,0 +1,22 @@
+---
+permalink: reference-smb-3-0-support-hyper-v-vms-in-windows-server-2012.html 
+sidebar: sidebar 
+keywords: microsoft, enhance, vss, infrastructure, support, application-consistent, backup, hyper-v, virtual, machine, vm, smb, target 
+summary: 'Microsoft a amélioré l"infrastructure VSS pour prendre en charge les sauvegardes cohérentes avec les applications des machines virtuelles Hyper-V exécutées sur des partages SMB 3.0 à l"aide du nouveau VSS Hardware Provider distant exécuté sur la cible SMB.' 
+---
+= Prise en charge de SMB 3.0 pour les machines virtuelles Hyper-V dans Windows Server 2012
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Microsoft a amélioré l'infrastructure VSS pour prendre en charge les sauvegardes cohérentes avec les applications des machines virtuelles Hyper-V exécutées sur des partages SMB 3.0 à l'aide du nouveau VSS Hardware Provider distant exécuté sur la cible SMB.
+
+Un nouveau fournisseur de partage de fichiers SMB nommé SMB File Share Provider est disponible dans l'hyperviseur Windows 2012 pour prendre en charge et coordonner les sauvegardes de machine virtuelle Hyper-V exécutées sur des partages SMB 3.0.
+
+Lorsque le demandeur VSS (SnapManager pour Hyper-V) ajoute un partage SMB 3.0 contenant des machines virtuelles Hyper-V à l'ensemble de copies Snapshot VSS, VSS appelle le nouveau fournisseur de copie de partage de fichiers SMB pour envoyer les commandes MSRPC à la cible SMB afin de coordonner les sauvegardes VSS.
+
+Le nouveau File Share Shadow Copy Agent (VSS Provider distant) exécuté sur la cible SMB est responsable de la création de la copie Snapshot matérielle réelle.
+
+Data ONTAP 8.2 implémente l'agent de copie « shadow Copy » (Remote VSS Hardware Provider) du partage de fichiers pour effectuer une copie de sauvegarde cohérente entre les applications des partages SMB.

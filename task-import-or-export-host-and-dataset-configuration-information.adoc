@@ -1,0 +1,33 @@
+---
+permalink: task-import-or-export-host-and-dataset-configuration-information.html 
+sidebar: sidebar 
+keywords: manage, host, management, console, multiple, import, export, information, dataset, consistency 
+summary: 'Bien que vous ne devriez gérer un hôte qu"à partir d"une seule console de gestion, si vous devez le faire à partir de plusieurs consoles, vous pouvez importer et exporter des informations de configuration d"hôtes et de jeux de données d"une console de gestion à distance vers une autre pour garantir la cohérence des données.' 
+---
+= Importation ou exportation des informations de configuration des hôtes et des jeux de données
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bien que vous ne devriez gérer un hôte qu'à partir d'une seule console de gestion, si vous devez le faire à partir de plusieurs consoles, vous pouvez importer et exporter des informations de configuration d'hôtes et de jeux de données d'une console de gestion à distance vers une autre pour garantir la cohérence des données.
+
+Vous ne devez ni importer ni exporter les informations de configuration dans le répertoire sur lequel SnapManager for Hyper-V est installé. Si vous désinstallez SnapManager pour Hyper-V, ce fichier est perdu.
+
+
+NOTE: Vous pouvez utiliser l'assistant Importer et exporter pour modifier les paramètres de configuration de l'hôte et du jeu de données en un paramètre précédemment exporté. Si vous effectuez cette opération dans un environnement en cluster, vous devez importer les paramètres de tous les nœuds du cluster de manière à ce que toutes les configurations de l'hôte et du jeu de données soient identiques.
+
+.Étapes
+. Dans le volet de navigation, cliquez sur *protection*.
+. Dans le volet *actions*, cliquez sur *Importer et exporter*.
++
+L'assistant Importer et exporter s'affiche.
+
+. Suivez les étapes de l'assistant pour exporter les informations de configuration de l'hôte et du jeu de données d'une console de gestion à une autre.
++
+
+NOTE: Le fichier d'exportation est statique et courant uniquement au moment de l'exécution du fichier d'exportation.
+
+. Suivez les étapes de l'assistant pour importer les informations de configuration de l'hôte et du jeu de données dans la console de gestion de destination.
+

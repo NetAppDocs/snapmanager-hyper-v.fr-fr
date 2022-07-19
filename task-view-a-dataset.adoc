@@ -1,0 +1,20 @@
+---
+permalink: task-view-a-dataset.html 
+sidebar: sidebar 
+keywords: view, virtual, machine, associate, dataset 
+summary: Vous pouvez afficher les machines virtuelles associées à un jeu de données. 
+---
+= Afficher un jeu de données
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez afficher les machines virtuelles associées à un jeu de données.
+
+.Étapes
+. Dans le volet de navigation, cliquez sur menu :protection[Datasets].
+. Développez l'arborescence pour examiner les machines virtuelles appartenant au jeu de données.
+

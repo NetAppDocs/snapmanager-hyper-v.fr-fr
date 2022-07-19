@@ -1,0 +1,52 @@
+---
+permalink: reference-requirements-for-creating-a-dataset.html 
+sidebar: sidebar 
+keywords: specific, requirement, create, dataset, protect, data, host, cluster, snapmanager, hyper-v 
+summary: 'Vous devez répondre à des exigences spécifiques lorsqu"il s"faut créer des datasets pour protéger vos données.' 
+---
+= Conditions requises pour la création d'un dataset
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous devez répondre à des exigences spécifiques lorsqu'il s'faut créer des datasets pour protéger vos données. Vous devez d'abord ajouter l'hôte ou le cluster hôte à SnapManager for Hyper-V, puis ajouter des machines virtuelles à l'hôte ou au cluster hôte.
+
+
+
+== Nom et description du jeu de données
+
+Lorsque vous nommez le jeu de données, vous devez utiliser une convention de nom sur votre site pour aider les administrateurs à localiser et à identifier les jeux de données, dont les caractères sont limités :
+
+* a à z
+* A à Z
+* 0 à 9
+* _ (soulignement)
+* - (tiret)
+
+
+
+
+== Ressources des jeux de données
+
+Vous devez ajouter le cluster hôte ou hôte à SnapManager for Hyper-V avant d'ajouter des ressources telles que des machines virtuelles au jeu de données.
+
+Vous pouvez ajouter des hôtes, des machines virtuelles dédiées ou des serveurs virtuels partagés à un jeu de données. Si vous ajoutez un hôte, vous ajoutez toutes les machines virtuelles appartenant à l'hôte. Vous pouvez également ajouter des machines virtuelles appartenant à différents hôtes au jeu de données. Les machines virtuelles peuvent appartenir à plusieurs jeux de données.
+
+
+NOTE: Les machines virtuelles dédiées et partagées appartenant au même cluster hôte ne doivent pas exister dans le même jeu de données. L'ajout de ces types de ressources à un jeu de données unique peut entraîner l'échec de la sauvegarde du jeu de données.
+
+
+
+== Les machines virtuelles et les LUN ONTAP
+
+Tous les fichiers associés aux machines virtuelles, y compris les fichiers de configuration, les copies Snapshot et les VHD, doivent résider sur des LUN ONTAP.
+
+
+
+== Consommation des ressources des jeux de données
+
+Une seule opération de sauvegarde cohérente avec les applications peut se produire sur un hôte à un moment donné. Si les mêmes machines virtuelles appartiennent à différents jeux de données, vous ne devez pas planifier simultanément une sauvegarde cohérente entre les applications. Dans ce cas, l'une des opérations de sauvegarde échoue.
+
+Lorsque vous créez un jeu de données, vous devez sélectionner tous les serveurs virtuels qui résident sur un LUN ONTAP en particulier. Vous pouvez ainsi obtenir toutes les sauvegardes d'une seule copie Snapshot et réduire la consommation d'espace sur le système de stockage.

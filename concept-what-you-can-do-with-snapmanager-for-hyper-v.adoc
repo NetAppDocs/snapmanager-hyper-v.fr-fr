@@ -1,0 +1,33 @@
+---
+permalink: concept-what-you-can-do-with-snapmanager-for-hyper-v.html 
+sidebar: sidebar 
+keywords: snapmanager, hyper-v, enable, back, up, restore, multiple, virtual, machine, automatic, backup, task, schedule, scheduling, dataset, retention, replication 
+summary: SnapManager pour Hyper-V vous permet de sauvegarder et de restaurer plusieurs machines virtuelles sur plusieurs hôtes. Vous pouvez créer des jeux de données et leur appliquer des règles pour automatiser les tâches de sauvegarde, telles que la planification, la conservation et la réplication. 
+---
+= Avantages de SnapManager pour Hyper-V
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+SnapManager pour Hyper-V vous permet de sauvegarder et de restaurer plusieurs machines virtuelles sur plusieurs hôtes. Vous pouvez créer des jeux de données et leur appliquer des règles pour automatiser les tâches de sauvegarde, telles que la planification, la conservation et la réplication.
+
+SnapManager pour Hyper-V vous permet d'effectuer les tâches suivantes :
+
+* Regroupez vos machines virtuelles dans des jeux de données soumis aux mêmes exigences de protection et appliquez des règles à ces jeux de données
+* Sauvegarder et restaurer des machines virtuelles dédiées ou en cluster résidant sur des systèmes de stockage exécutant le logiciel ONTAP
+* Sauvegarde et restauration de machines virtuelles hébergées sur des CSV (Cluster Shared volumes)
+* Automatisation des sauvegardes des jeux de données à l'aide de règles de planification
+* Effectuez des sauvegardes à la demande de datasets
+* Conserver les sauvegardes de datasets aussi longtemps que vous en avez besoin, à l'aide de règles de conservation
+* Mettre à jour l'emplacement de destination SnapMirror une fois la sauvegarde terminée
+* Spécifiez les scripts personnalisés à exécuter avant ou après une sauvegarde
+* Restauration de machines virtuelles à partir de sauvegardes
+* Surveiller l'état de toutes les tâches planifiées et en cours d'exécution
+* Gérez les hôtes à distance à partir d'une console de gestion
+* Fournir des rapports consolidés pour les opérations de sauvegarde, de restauration et de configuration du jeu de données
+* Effectuez des sauvegardes cohérentes au niveau des applications et des défaillances
+* Réaliser des opérations de reprise après incident à l'aide des applets de commande PowerShell
+* Effectuez les mises à niveau propagées des systèmes d'exploitation des clusters (OS)
+

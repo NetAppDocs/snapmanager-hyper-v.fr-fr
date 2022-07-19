@@ -1,0 +1,38 @@
+---
+permalink: reference-hotfix-requirements-for-windows-server-environments.html 
+sidebar: sidebar 
+keywords: manual, install, hotfixes, microsoft, windows, server, operate, operating, system, environment 
+summary: 'Vous devez installer manuellement les correctifs aux environnements de système d"exploitation Microsoft Windows Server.' 
+---
+= Configuration requise pour les environnements Windows Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous devez installer manuellement les correctifs aux environnements de système d'exploitation Microsoft Windows Server.
+
+
+NOTE: Pour connaître la configuration requise pour Windows Server 2016 et Windows Server 2019, reportez-vous à la section https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-on-windows-server["Hyper-V sur Windows Server"^]
+
+Pour Windows Server 2012, les correctifs suivants sont requis :
+
+* http://support.microsoft.com/kb/2770917["KB2770917"]
+* http://support.microsoft.com/kb/2779768["KB2779768"]
+
+
+Pour Windows Server 2008 R2, les correctifs suivants sont requis :
+
+* http://support.microsoft.com/kb/974909["KB974909"]
+* http://support.microsoft.com/kb/975354["KB975354"]
+* http://support.microsoft.com/kb/2637197["KB2637197"]
+
+
+Pour Windows Server 2008 R2 SP1, les correctifs suivants sont requis :
+
+* http://support.microsoft.com/kb/2263829["KB2263829"]
+* http://support.microsoft.com/kb/2637197["KB2637197"]
+
+
+Il s'agit des niveaux de patch minimum.

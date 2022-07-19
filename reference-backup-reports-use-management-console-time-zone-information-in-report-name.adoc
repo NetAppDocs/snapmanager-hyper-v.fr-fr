@@ -1,0 +1,25 @@
+---
+permalink: reference-backup-reports-use-management-console-time-zone-information-in-report-name.html 
+sidebar: sidebar 
+keywords: backup, report, use, management, console, time, zone, information, report, name 
+summary: Les rapports de sauvegarde utilisent les informations de fuseau horaire de la console de gestion dans le nom du rapport. 
+---
+= Les rapports de sauvegarde utilisent les informations de fuseau horaire de la console de gestion dans le nom du rapport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Numéro*
++
+Lorsque vous générez un rapport de sauvegarde à l'aide d'un hôte client qui réside dans un fuseau horaire différent de celui de l'hôte parent, le nom du rapport utilise les informations du fuseau horaire de l'hôte client et le contenu du rapport utilise le fuseau horaire de l'hôte parent.
+
+* *Cause*
++
+L'horodatage du nom du rapport de sauvegarde apparaît avec les informations du fuseau horaire hôte client.
+
+* * Action corrective*
++
+Aucune action corrective n'est nécessaire.
+
+

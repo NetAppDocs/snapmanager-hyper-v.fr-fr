@@ -1,0 +1,22 @@
+---
+permalink: task-delete-a-report.html 
+sidebar: sidebar 
+keywords: delete, report, deleting 
+summary: 'Vous pouvez supprimer un ou plusieurs rapports lorsqu"ils ne sont plus nécessaires.' 
+---
+= Supprimer un rapport
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez supprimer un ou plusieurs rapports lorsqu'ils ne sont plus nécessaires.
+
+.Étapes
+. Dans le volet de navigation, cliquez sur menu:Rapports[Datasets] ou menu:Rapports[hôtes].
+. Sélectionnez le jeu de données, la machine virtuelle ou l'hôte qui contient le ou les rapports que vous souhaitez supprimer.
+. Dans le volet Rapports, sélectionnez le ou les rapports à supprimer.
+. Dans le volet actions, cliquez sur *Supprimer le rapport* et cliquez sur *OK* pour le supprimer.
+

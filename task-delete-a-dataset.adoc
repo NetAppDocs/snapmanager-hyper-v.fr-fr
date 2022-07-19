@@ -1,0 +1,28 @@
+---
+permalink: task-delete-a-dataset.html 
+sidebar: sidebar 
+keywords: delete, dataset, protection, change, deleting 
+summary: Vous pouvez supprimer un jeu de données à mesure que vos besoins de protection évoluent. 
+---
+= Supprimer un jeu de données
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez supprimer un jeu de données à mesure que vos besoins de protection évoluent.
+
+La suppression d'un jeu de données ne supprime pas les machines virtuelles appartenant au jeu de données. Une fois le dataset supprimé, les machines virtuelles qui l'appartenaient deviennent non protégées s'elles n'appartenaient pas à un autre jeu de données.
+
+.Étapes
+. Dans le volet de navigation, cliquez sur menu :protection[Datasets].
+. Sélectionnez le jeu de données que vous souhaitez supprimer.
+. Dans le volet actions, cliquez sur *Supprimer* et cliquez sur *OK* pour supprimer le jeu de données.
++
+La suppression du jeu de données supprime également les travaux planifiés de tous les hôtes membres du jeu de données. SnapManager pour Hyper-V ne gère plus la conservation des sauvegardes lorsque vous supprimez le jeu de données, même si celui-ci est recréré-créé avec le même nom.
+
+
+
+SnapManager pour Hyper-V ne protège plus les ressources associées au jeu de données supprimé, sauf si ces ressources appartiennent à un autre jeu de données.

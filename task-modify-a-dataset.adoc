@@ -1,0 +1,24 @@
+---
+permalink: task-modify-a-dataset.html 
+sidebar: sidebar 
+keywords: create, dataset, modify, description, resource, associate 
+summary: Une fois que vous avez créé un jeu de données, vous pouvez modifier la description du jeu de données et les ressources associées au jeu de données. 
+---
+= Modifier un jeu de données
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Une fois que vous avez créé un jeu de données, vous pouvez modifier la description du jeu de données et les ressources associées au jeu de données.
+
+La case à cocher Valider le jeu de données est sélectionnée par défaut. SnapManager for Hyper-V vérifie s'il existe des erreurs de configuration dans toutes les VM lors de la création ou de la modification d'un jeu de données. Vous devez vous assurer que la case n'est pas cochée si vous ne souhaitez pas activer la validation du jeu de données.
+
+.Étapes
+. Dans le volet de navigation, cliquez sur menu :protection[Datasets].
+. Sélectionnez le jeu de données à modifier.
+. Dans le volet actions, cliquez sur *Modifier le jeu de données*.
+. Suivez les étapes de l'assistant.
+

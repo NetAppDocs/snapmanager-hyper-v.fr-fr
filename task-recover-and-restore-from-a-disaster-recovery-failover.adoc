@@ -1,0 +1,176 @@
+---
+permalink: task-recover-and-restore-from-a-disaster-recovery-failover.html 
+sidebar: sidebar 
+keywords: recover, disaster, snapmanager, hyper-v, fail, secondary, system, storage, powershell, restore, restoring, failover, recovery 
+summary: 'Pour effectuer une restauration après incident, SnapManager pour Hyper-V doit d"abord basculer vers un système de stockage secondaire. Le basculement implique parfois une série d"étapes manuelles dans PowerShell.' 
+---
+= Reprise après incident et restauration suite à un basculement de reprise après incident
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Pour effectuer une restauration après incident, SnapManager pour Hyper-V doit d'abord basculer vers un système de stockage secondaire. Le basculement implique parfois une série d'étapes manuelles dans PowerShell.
+
+La plupart des sauvegardes peuvent être restaurées sur un autre hôte pour NAS et SAN. Cependant, il n'est pas possible de restaurer des sauvegardes cohérentes avec les défaillances de Windows Server 2008 R2 sur un autre hôte.
+
+.Étapes
+. Si vous exécutez Data ONTAP 8.1.x, sur le site secondaire, entrez les informations de la machine virtuelle de stockage (SVM) dans le paramètre TPS (transport Protocol Setting) dans la MMC SnapDrive pour Windows.
+. Dans le système de stockage secondaire, connectez-vous à tous les LUN.
++
+Si le système de stockage secondaire est mis en cluster, allez au nœud où le groupe de clusters, qui est le nœud propriétaire du groupe de stockage disponible dans le cluster de destination, est en ligne, puis connectez-vous à toutes les LUN à partir de ce nœud du cluster. Pour plus d'informations sur le mappage des LUN, reportez-vous à la documentation SnapDrive pour Windows.
+
+. En fonction de votre configuration, effectuer l'une des actions suivantes :
++
+|===
+| Si le système de stockage primaire est... | Alors... 
+
+
+ a| 
+Un hôte autonome (SAN)
+ a| 
+Connectez-vous à tous les points de montage et LUN du même type sur le système de stockage primaire.
+
+
+
+ a| 
+Un hôte en cluster (SAN)
+ a| 
+Depuis le nœud où le groupe de clusters est en ligne, connectez-vous à tous les points de montage et à tous les LUN du cluster.
+
+
+
+ a| 
+Data ONTAP 8.1.x configuré avec un seul LUN hébergeant des VM sur un volume FlexVol source (SAN)
+ a| 
+Pour que les mises à jour de SnapMirror réussissent, vous devez créer une seconde LUN de plus petite taille (10 Mo à 100 Mo) sur le volume FlexVol source avant de lancer une sauvegarde. Depuis le nœud où le groupe de clusters est en ligne, connectez-vous à tous les points de montage et à tous les LUN du cluster.
+
+
+
+ a| 
+Un hôte autonome ou en cluster (NAS)
+ a| 
+Démontez le volume protection des données (DP), montez le volume DP en tant que réinscriptible, vérifiez que le volume dispose d'autorisations RWX et créez des partages CIFS pour les différents volumes.
+
+|===
+. Reconfigurer SnapInfo en fonction de votre environnement :
++
+|===
+| Si votre configuration est... | Alors... 
+
+
+ a| 
+SAN
+ a| 
+Restaurez le LUN SnapInfo à partir de sa dernière copie Snapshot.
+
+
+
+ a| 
+NAS
+ a| 
+Montez le répertoire SnapInfo.
+
+|===
++
+Pour le NAS, si une erreur d'accès est refusée se produit ou si vous ne pouvez pas accéder à l'emplacement du partage SMB exposé, vous devrez peut-être réinitialiser la liste de contrôle d'accès sur le partage.
+
++
+
+NOTE: Cela est courant lors de l'utilisation de la console SCVMM (System Center Virtual machine Manager) et de l'agent SMI-S de Data ONTAP.
+
+. Ajoutez le cluster ou le système de stockage secondaire dans le SnapManager pour les MMC Hyper-V, puis configurez-le à l'aide du chemin SnapInfo.
+. Entrez les applets de commande suivantes :
++
+.. Entrez `Get-VMsFromBackup` Pour récupérer la liste des machines virtuelles présentes dans les métadonnées de sauvegarde.
+.. Entrez `Get-Backup` Pour obtenir les copies de sauvegarde pour chaque machine virtuelle.
+
+
+. Pour restaurer, utilisez `Restore-Backup` Avec le GUID de la machine virtuelle et la copie de sauvegarde avec les paramètres suivants :
++
+|===
+| Pour restaurer à partir de... | Entrez cette commande... 
+
+
+ a| 
+Un autre hôte
+ a| 
+`Restore-Backup -Server` `Secondary_host_system_or_cluster_name -DisableVerifySnapshot -RestoreToAlternateHost`
+
+
+
+ a| 
+Une sauvegarde répertoriée
+ a| 
+`Restore-Backup -Server -VirtualMachinePath -SnapShotFilePath @VHD`
+
+|===
++
+Pour `@VHD`, Un ordinateur virtuel peut avoir plusieurs disques durs virtuels ; assurez-vous de saisir une paire source et un chemin d'accès de destination spécifiés pour chaque disque dur virtuel.
+
+. Si le système hôte secondaire est un cluster, procédez comme suit :
++
+.. Assurez-vous que les LUN sur lesquelles résident les machines virtuelles sont en ligne sur le nœud de cluster qui possède le groupe de clusters.
+.. Utilisez les applets de commande Failover PowerShell pour assurer la haute disponibilité des machines virtuelles.
+
+
+
+
+
+
+== Exemples de basculement
+
+L'exemple suivant montre une configuration à deux clusters dans laquelle smhv-cluster-01 est le site principal et hv-19-cluster est le site secondaire :
+
+[listing]
+----
+PS C:\> Get-VMsFromBackup -Server hv-19-cluster
+
+winxp-x64c-135                593ABA72-B323-4AF7-9AC6-9514F64C0178
+csv1-xp-3                     59B85C68-BAFA-4A49-8E85-A201045843F7
+vm-w2k8r2sp1                  5A248757-872B-4FE7-8282-91C8E9D45CF9
+um10_11_dr                    5AC1B2A8-6603-4F90-98F5-4F2F435AB0C2
+winxp-x64c-30                 5B47D3CF-5D96-495D-9BAB-FB394392CF31
+winxp-x64c-126                5B57EED1-B4F1-45A3-A649-24C6947CB79C
+winxp-x64c-118                5B5D417B-70DC-427C-94BB-97FF81C5B92B
+winxp-x64c-122                5BEE26B8-BE57-4879-A28E-9250A6A5EEFC
+csv4-w2k3-19                  5D0613E5-B193-4293-8AAD-F8B94A5D851F
+
+PS C:\> Get-Backup -Server hv-19-cluster -ResourceName um10_11_dr
+
+BackupName    : smhv-ccb-ds_04-10-2012_10.37.58
+RetentionType : hourly
+DatasetName   : smhv-ccb-ds
+BackupId      : smhv-ccb-ds_04-10-2012_10.37.58
+BackupTime    : 4/10/2012 10:37:58 AM
+BackupType    : Application consistent
+BackedupVMs   : {um10_11_dr}
+
+PS C:\> Restore-Backup -Server hv-19-cluster -ResourceName
+um10_11_dr -BackupName smhv-ccb-ds_04-10-2012_10.37.58
+-DisableVerifySnapshot -RestoreToAlternateHost
+----
+L'exemple suivant montre une opération de restauration SAN vers un chemin secondaire pour lequel N:\ est la destination et i:\ est le chemin de LUN source :
+
+[listing]
+----
+PS C:\> Restore-Backup -Resourcename dr-san-ded1
+-RestoreToAlternateHost -DisableVerifySnapshot -BackupName san_dr_09-11-2013_10.57.31 -Verbose
+-VirtualMachinePath "N:\dr-san-ded1" -SnapshotFilePath "N:\dr-san-ded1" -VHDs @(@{"SourceFilePath" = "I:\dr-san-ded1\Virtual Hard Disks\dr-san-ded1.vhdx"; "DestinationFilePath" = "N:\dr-san-ded1\Virtual Hard Disks\dr-san-ded1"})
+----
+L'exemple suivant montre une opération de restauration NAS vers un chemin alternatif pour lequel \\172.17.162.174\ est le chemin du partage SMB source et \\172.17.175.82\ est le chemin du partage SMB de destination :
+
+[listing]
+----
+PS C:\> Restore-Backup -Resourcename vm_claba87_cifs1
+-RestoreToAlternateHost -DisableVerifySnapshot -BackupName ag-DR_09-09-2013_16.59.16 -Verbose
+-VirtualMachinePath "\\172.17.175.82\vol_new_dest_share\ag-vm1" -SnapshotFilePath "\\172.17.175.82\vol_new_dest_share\ag-vm1" -VHDs @(@{"SourceFilePath" = "\\172.17.162.174\vol_test_src_share\ag-vm1\Virtual Hard Disks\ag-vm1.vhdx"; "DestinationFilePath" = "\\172.17.175.82\vol_new_dest_share\ag-vm1\Virtual Hard Disks\ag-vm1.vhdx"})
+----
+*Informations connexes*
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1368826["Guide de sauvegarde et de restauration en ligne pour la protection des données Data ONTAP 8.2 7-mode"]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30049["Documentation NetApp : SnapDrive pour Windows (versions actuelles)"]
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-cifs/home.html["Référence SMB/CIFS"]

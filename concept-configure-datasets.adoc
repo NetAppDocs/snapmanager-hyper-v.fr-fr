@@ -1,0 +1,14 @@
+---
+permalink: concept-configure-datasets.html 
+sidebar: sidebar 
+keywords: create, modify, view, delete, dataset, protection, configure, configuring 
+summary: Vous pouvez créer, modifier, afficher et supprimer des datasets en fonction de vos besoins en matière de protection. 
+---
+= Configurez des datasets
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez créer, modifier, afficher et supprimer des datasets en fonction de vos besoins en matière de protection.

@@ -1,0 +1,38 @@
+---
+permalink: task-manually-backing-up-a-dataset.html 
+sidebar: sidebar 
+keywords: create, on-demand, backup, dataset, back, up, manual 
+summary: 'Vous pouvez créer une sauvegarde à la demande d"un jeu de données.' 
+---
+= Sauvegarde manuelle d'un jeu de données
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez créer une sauvegarde à la demande d'un jeu de données.
+
+Vous devez disposer des informations suivantes :
+
+* Nom et description de la sauvegarde
+* Nom de la règle, si nécessaire
+* Informations sur les modifications de police (si vous envisagez de modifier l'une des options de police précédemment spécifiées)
+* Type de sauvegarde
+* Informations sur les options de sauvegarde
+
+
+.Étapes
+. Dans le volet de navigation, cliquez sur menu :protection[Datasets].
+. Sélectionnez le jeu de données pour lequel vous souhaitez créer une sauvegarde manuelle et cliquez sur *Backup*.
++
+L'assistant *Backup Wizard* s'affiche.
+
+. Suivez les étapes de l'assistant pour créer votre sauvegarde à la demande.
++
+La fermeture de l'assistant n'annule pas la sauvegarde à la demande.
+
+
+
+Vous pouvez afficher l'état de la sauvegarde à la demande dans la fenêtre gestion des travaux.

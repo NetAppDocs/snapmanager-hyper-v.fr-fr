@@ -1,0 +1,34 @@
+---
+permalink: reference-restore-from-a-backup-after-failback.html 
+sidebar: sidebar 
+keywords: restore, restoring, backup, failback 
+summary: 'Restauration à partir d"une sauvegarde après restauration.' 
+---
+= Effectuez une restauration à partir d'une sauvegarde après restauration
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Numéro*
++
+Si vous effectuez un basculement et un retour arrière, il est possible que vous ne puissiez pas restaurer des machines virtuelles sur votre site primaire à partir d'une sauvegarde créée sur le même site primaire, avant le basculement.
+
+* *Cause*
++
+La vérification des copies Snapshot utilise les GUID des volumes. Les GUID sont modifiés après la reprise d'activité.
+
+* * Action corrective*
++
+Vous pouvez désactiver l'option Verify snapshots via PowerShell ou l'assistant de restauration :
+
++
+** Décochez l'option "Activer la vérification de snapshot" dans la page *Options de restauration* de l'assistant de restauration.
+** Avec PowerShell, assurez-vous que - `DisableVerifySnapshot` paramètre spécifié.
+
+
+
+
+*Informations connexes*
+
+xref:task-restore-a-virtual-machine-from-a-backup-copy.adoc[Restaurer une machine virtuelle à partir d'une copie de sauvegarde]

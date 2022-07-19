@@ -1,0 +1,28 @@
+---
+permalink: reference-web-service-client-channel-was-unable-to-connect-to-the-configurationmanagementservice-instance-on-machine-smhv51-81clus.html 
+sidebar: sidebar 
+keywords: web, service, client, channel, unable, conntect, configurationmanagementservice, instance, machine, smhv51_81clus 
+summary: 'Le canal du client du service Web n"a pas pu se connecter à l"instance ConfigurationService sur l"ordinateur smhv51_81clus.' 
+---
+= Le canal du client du service Web n'a pas pu se connecter à l'instance ConfigurationService sur l'ordinateur smhv51_81clus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Message*
++
+`Web Service Client channel was unable to connect to the ConfigurationManagementService instance on machine smhv51_81clus.`
+
++
+`There was no endpoint listening at net.tcp://smhv51_81clus/SnapManager/HyperV/ConfigMgmtService/v_10 that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.`
+
+* *Description*
++
+Si vous exportez des informations de configuration, les paramètres de port du service Web local des hôtes gérés sont stockés dans le fichier de configuration exporté. Si, par la suite, vous devez réinstaller SnapManager pour Hyper-V à l'aide d'un autre port de service Web et importer les anciennes informations de configuration, vous rencontrez des problèmes de connexion.
+
+* * Action corrective*
++
+Pour éviter ce problème, utilisez les mêmes paramètres de port de service Web que ceux contenus dans le fichier de configuration exporté lors de la réinstallation de SnapManager pour Hyper-V.
+
+

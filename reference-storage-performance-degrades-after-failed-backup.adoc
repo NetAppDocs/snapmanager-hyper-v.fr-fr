@@ -1,0 +1,25 @@
+---
+permalink: reference-storage-performance-degrades-after-failed-backup.html 
+sidebar: sidebar 
+keywords: storage, performance, degrade, fail, backup 
+summary: Les performances de stockage diminuent après une défaillance de la sauvegarde. 
+---
+= Les performances de stockage diminuent après une défaillance de la sauvegarde
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Numéro*
++
+Les performances de stockage peuvent se dégrader suite à l'échec d'une tâche de sauvegarde.
+
+* *Cause*
++
+Si les composants Microsoft Hyper-V VSS sont confrontés à une exception lors d'une sauvegarde, il se peut que les CSV (Cluster Shared volumes) restent en mode E/S redirigée, ce qui entraîne une surcharge d'E/S et des goulets d'étranglement potentiels au sein de Windows Failover Cluster. Cela peut entraîner une dégradation globale des performances, avec l'impact le plus important sur les machines virtuelles résidant sur le CSV en mode d'E/S redirigé.
+
+* * Action corrective*
++
+Contactez le support Microsoft pour obtenir de l'aide sur ce problème.
+
+

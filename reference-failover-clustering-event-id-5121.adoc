@@ -1,0 +1,25 @@
+---
+permalink: reference-failover-clustering-event-id-5121.html 
+sidebar: sidebar 
+keywords: failover, cluster, event, id, 5121 
+summary: Failover Clustering Event ID 5121. 
+---
+= Failover Clustering Event ID 5121
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Message*
++
+`Failover clustering event ID 5121` à partir des journaux d'événements de l'application ou du message hôte `NO_DIRECT_IO_DUE_TO_FAILURE`.
+
+* *Description*
++
+Ce message d'erreur se produit lorsque le volume partagé du cluster (CSV) n'est plus directement accessible depuis le nœud de cluster et que l'accès en E/S est redirigé vers le dispositif de stockage propriétaire du volume. Ceci se produit car seul le nœud de coordination peut effectuer des actions à l'aide de sauvegardes VSS. Lors des opérations de sauvegarde, le nœud de coordination verrouille le CSV et requiert que tous les nœuds sans coordination soient réredirigés vers les E/S.
+
+* * Action corrective*
++
+Une fois l'opération terminée, le nœud de coordination libère le verrou sur le CSV et les E/S ne sont plus redirigées. Si le message d'erreur se produit uniquement pendant les sauvegardes VSS, il n'y a pas d'échec et il s'agit d'un comportement normal.
+
+

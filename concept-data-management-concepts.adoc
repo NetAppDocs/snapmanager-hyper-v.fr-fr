@@ -1,0 +1,80 @@
+---
+permalink: concept-data-management-concepts.html 
+sidebar: sidebar 
+keywords: snapmanager, hyper-v, dataset, policies, policy, enable, group, virtual, machine, apply, rule, retention, data, management, concept 
+summary: 'SnapManager pour Hyper-V utilise des jeux de données et des règles qui vous permettent de regrouper des machines virtuelles, puis d"appliquer des règles à ces groupes pour régir leur comportement.' 
+---
+= Concepts de gestion des données
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+SnapManager pour Hyper-V utilise des jeux de données et des règles qui vous permettent de regrouper des machines virtuelles, puis d'appliquer des règles à ces groupes pour régir leur comportement. Ces informations sont utiles dans les situations où vous utilisez SnapManager pour Hyper-V pour planifier une sauvegarde et spécifier une stratégie de conservation pour la sauvegarde.
+
+* *ensembles de données*
++
+Un jeu de données est un groupe de machines virtuelles qui vous permet de protéger les données à l'aide des règles de conservation, de planification et de réplication. Vous pouvez utiliser des jeux de données pour regrouper des machines virtuelles qui présentent les mêmes besoins en matière de protection. Une machine virtuelle peut faire partie de plusieurs jeux de données.
+
+* *Hôtes parents Hyper-V*
++
+Les hôtes parents Hyper-V sont des serveurs physiques sur lesquels le rôle Hyper-V est activé. Les hôtes contenant des machines virtuelles sont ajoutés à SnapManager for Hyper-V pour la protection et la restauration. SnapManager pour Hyper-V doit être installé et exécuté sur chaque hôte parent Hyper-V.
+
+* *ressources non protégées*
++
+Les ressources non protégées sont des machines virtuelles qui ne font partie d'aucun jeu de données. Vous pouvez protéger ces ressources en les ajoutant à un jeu de données.
+
+* *machines virtuelles*
++
+Une machine virtuelle exécutée sur un hôte parent Hyper-V est une représentation d'une machine physique avec son propre système d'exploitation, ses applications et son propre matériel.
+
++
+SnapManager for Hyper-V suit l'identifiant global unique (ou GUID) de la machine virtuelle, et non le nom de celle-ci. Si vous supprimez une machine virtuelle protégée par SnapManager pour Hyper-V et que vous créez une autre machine virtuelle avec le même nom, cette nouvelle machine virtuelle n'est pas protégée car elle possède un GUID différent.
+
+* *consoles de gestion*
++
+Les consoles de gestion sont des ordinateurs sur lesquels SnapManager for Hyper-V est installé et exécuté en tant que client. Vous pouvez utiliser des consoles de gestion pour gérer à distance SnapManager pour les opérations Hyper-V sur un hôte parent Hyper-V distant.
+
+* *politiques de planification*
++
+Les stratégies de planification attribuent des tâches de sauvegarde à un moment donné, ce qui vous permet d'automatiser le processus de planification. Vous pouvez ajouter plusieurs règles de planification, qui s'appliquent à toutes les machines virtuelles membres du jeu de données. SnapManager pour Hyper-V utilise le planificateur Windows pour créer des tâches planifiées.
+
+* *politiques de conservation*
++
+Une règle de conservation permet de gérer la conservation des sauvegardes des jeux de données dans SnapManager for Hyper-V. Les règles de conservation déterminent la durée de sauvegarde d'un jeu de données, en fonction de la durée ou du nombre de copies de sauvegarde.
+
++
+Les limites que vous avez définies dans une règle de conservation vous permettent de vous assurer que la sauvegarde de vos données ne compromet pas la capacité de stockage future.
+
++
+Vous pouvez définir les périodes de conservation suivantes dans SnapManager pour Hyper-V :
+
++
+** Une heure
+** Un jour
+** Une semaine
+** Un mois
+** Illimitée
+
+
+
+
+
+NOTE: Vous pouvez spécifier une période de conservation une fois par jeu de données.
+
+Après avoir choisi la fréquence de suppression des sauvegardes des jeux de données, vous pouvez choisir de supprimer soit des sauvegardes antérieures à une période de temps spécifiée, soit des sauvegardes dépassant le total maximum.
+
+Si votre système semble conserver d'anciennes sauvegardes, vérifiez vos stratégies de rétention. Tous les objets sauvegardés qui partagent une copie Snapshot doivent répondre aux critères de suppression de sauvegarde pour que la règle de conservation puisse déclencher la suppression d'une copie Snapshot.
+
+* *stratégies de réplication*
++
+Une règle de réplication détermine si la destination SnapMirror est mise à jour après une opération de sauvegarde réussie. SnapManager pour Hyper-V prend uniquement en charge SnapMirror basé sur les volumes. Vous devez configurer une relation SnapMirror sur les deux systèmes de stockage avant d'essayer d'effectuer une mise à jour SnapMirror. Cette opération est requise pour la source et la destination.
+
+
+
+*Informations connexes*
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1368826["Guide de sauvegarde et de restauration en ligne pour la protection des données Data ONTAP 8.2 7-mode"]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30049["Documentation NetApp : SnapDrive pour Windows (versions actuelles)"]

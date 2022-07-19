@@ -1,0 +1,54 @@
+---
+permalink: reference-hyper-v-parent-host-requirements.html 
+sidebar: sidebar 
+keywords: hyper-v, parent, host, physical, server, enable, contain, virtual, machine, snapmanager, requirement 
+summary: Les hôtes parents Hyper-V sont des serveurs physiques sur lesquels le rôle Hyper-V est activé. 
+---
+= Exigences relatives à l'hôte parent Hyper-V
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Les hôtes parents Hyper-V sont des serveurs physiques sur lesquels le rôle Hyper-V est activé. Les serveurs hôtes contenant des machines virtuelles sont ajoutés à SnapManager for Hyper-V pour la protection et la restauration. Pour installer et exécuter tous les composants logiciels SnapManager pour Hyper-V, vous devez vous assurer que les hôtes parents Hyper-V respectent la configuration minimale du système d'exploitation et des exigences Hyper-V.
+
+* *Systèmes d'exploitation pris en charge*
++
+SnapManager pour Hyper-V s'exécute sur les systèmes d'exploitation suivants :
+
++
+** Windows Server 2008 R2 SP1
+** Windows Server 2012 R2
+** Windows Server 2012
+** Windows Server 2016
+** Windows Server 2019
+
+
+* *Systèmes d'exploitation de console de gestion pris en charge*
++
+Les consoles de gestion doivent exécuter les systèmes d'exploitation suivants :
+
++
+** Windows Server 2008 R2 SP1
+** Windows Server 2012 R2
+** Windows Server 2012
+** Windows Server 2016
+** Windows Server 2019
+
+
+* * Hyper-V requis*
++
+Pour plus d'informations, consultez les informations de démarrage d'Hyper-V dans la bibliothèque Microsoft TechNet.
+
+* *Soutien à l'internationalisation*
++
+SnapManager pour Hyper-V a été testé sur des systèmes d'exploitation de langue allemande et japonaise.
+
+
+
+*Informations connexes*
+
+http://technet.microsoft.com/library/cc753637(WS.10).aspx["Microsoft TechNet : Hyper-V"]
+
+http://mysupport.netapp.com/matrix["Matrice d'interopérabilité NetApp"]

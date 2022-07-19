@@ -1,0 +1,24 @@
+---
+permalink: task-remotely-install-or-uninstall-snapmanager-for-hyper-v-on-nodes.html 
+sidebar: sidebar 
+keywords: remote, host, install, wizard, enable, uninstall, snapmanager, hyper-v, standalone, cluset, node, individual 
+summary: 'L"assistant d"installation d"hôtes à distance vous permet d"installer ou de désinstaller SnapManager for Hyper-V à distance sur des hôtes ou des nœuds autonomes et en cluster.' 
+---
+= Installez ou désinstallez SnapManager for Hyper-V à distance sur les nœuds ou les hôtes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+L'assistant d'installation d'hôtes à distance vous permet d'installer ou de désinstaller SnapManager for Hyper-V à distance sur des hôtes ou des nœuds autonomes et en cluster. Vous pouvez installer SnapManager pour Hyper-V à distance si vous souhaitez installer le logiciel sur tous les nœuds d'un cluster à la fois au lieu de l'installer sur chaque nœud.
+
+SnapManager pour Hyper-V doit être installé sur un nœud hôte pour utiliser l'assistant d'installation d'hôte à distance.
+
+.Étapes
+. Dans le volet de navigation, cliquez sur *protection*.
+. Dans le volet actions, cliquez sur *installation de l'hôte à distance*.
+. Exécutez l'assistant *Remote Host Install*.
+
+
+Lorsque vous exécutez l'assistant d'installation d'hôte à distance, le nœud hôte transmet l'installation ou la désinstallation de SnapManager pour Hyper-V à d'autres nœuds ou hôtes du cluster.

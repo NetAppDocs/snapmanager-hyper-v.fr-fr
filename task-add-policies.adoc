@@ -1,0 +1,34 @@
+---
+permalink: task-add-policies.html 
+sidebar: sidebar 
+keywords: add, retention, schedule, scheduling, replication, policies, policy, script, dataset, data, protect 
+summary: Vous pouvez ajouter des règles de conservation, de planification et de réplication, ainsi que des scripts à vos jeux de données pour protéger vos données. 
+---
+= Ajouter des règles
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez ajouter des règles de conservation, de planification et de réplication, ainsi que des scripts à vos jeux de données pour protéger vos données.
+
+Vous devez disposer des informations suivantes :
+
+* Noms et descriptions des politiques
+* Informations de conservation
+* Informations de planification
+* Informations sur les options de sauvegarde
+* Informations sur le script de sauvegarde
+
+
+.Étapes
+. Dans le volet de navigation, cliquez sur menu :protection[Datasets].
+. Sélectionnez le jeu de données auquel vous souhaitez ajouter des règles.
+. Dans le volet actions, cliquez sur *Ajouter une stratégie*.
++
+L'assistant Créer une stratégie s'affiche.
+
+. Suivez les étapes de l'assistant pour créer des règles de protection pour votre dataset.
+

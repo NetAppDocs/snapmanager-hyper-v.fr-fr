@@ -1,0 +1,45 @@
+---
+permalink: concept-dashboard-settings.html 
+sidebar: sidebar 
+keywords: snapmanager, hyper-v, dashboard, overview, resource, protect, job, resource, history, setting 
+summary: 'Le tableau de bord SnapManager pour Hyper-V affiche une vue d"ensemble des ressources actuellement protégées, ainsi que celles qui ne sont pas protégées. Vous pouvez sélectionner différents segments du graphique à secteurs État de protection VM ou de l"historique des travaux pour afficher des informations générales sur l"état de vos travaux, ressources et historique.' 
+---
+= Paramètres du tableau de bord
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le tableau de bord SnapManager pour Hyper-V affiche une vue d'ensemble des ressources actuellement protégées, ainsi que celles qui ne sont pas protégées. Vous pouvez sélectionner différents segments du graphique à secteurs État de protection VM ou de l'historique des travaux pour afficher des informations générales sur l'état de vos travaux, ressources et historique.
+
+image::smhv_dashboard.gif[tableau de bord smhv]
+
+* *État de protection VM*
++
+Lorsque vous sélectionnez un segment dans le graphique à secteurs de l'état de protection VM, vous pouvez afficher des informations sur l'état de protection des machines virtuelles dans le volet Détails. Les descriptions des valeurs valides sont les suivantes :
+
++
+** *OK*
++
+Affiche la dernière sauvegarde réussie de toutes les machines virtuelles.
+
+** *Échec*
++
+Affiche la dernière sauvegarde ayant échoué de chaque machine virtuelle.
+
+** *Non protégé*
++
+Affiche les machines virtuelles qui n'appartiennent à aucun jeu de données et qui ne sont donc pas protégées.
+
+
+
+* *Historique du travail*
++
+Lorsque vous sélectionnez un segment dans le graphique à barres Historique des travaux, vous pouvez afficher, dans le volet Détails, l'historique des travaux terminés, en échec et en cours d'exécution sur une période donnée. Vous pouvez modifier la durée d'affichage des détails du travail dans le graphique à barres Historique des travaux. La valeur par défaut est sept jours.
+
+* *Configurer rafraîchissement*
++
+Vous pouvez modifier la fréquence à laquelle le tableau de bord actualise les informations affichées en utilisant le bouton *configurer rafraîchissement*. La valeur par défaut est 10 minutes.
+
+

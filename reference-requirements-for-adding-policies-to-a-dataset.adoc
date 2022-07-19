@@ -1,0 +1,113 @@
+---
+permalink: reference-requirements-for-adding-policies-to-a-dataset.html 
+sidebar: sidebar 
+keywords: specific, requirement, apply, policies, policy, backup, restore, function, multiple, retention, replication, dataset 
+summary: Vous devez répondre à des exigences spécifiques lorsque vous souhaitez appliquer des règles aux jeux de données pour la fonctionnalité de sauvegarde ou de restauration. Vous pouvez ajouter plusieurs règles de conservation, de planification et de réplication au même jeu de données. 
+---
+= Conditions requises pour l'ajout de règles à un jeu de données
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous devez répondre à des exigences spécifiques lorsque vous souhaitez appliquer des règles aux jeux de données pour la fonctionnalité de sauvegarde ou de restauration. Vous pouvez ajouter plusieurs règles de conservation, de planification et de réplication au même jeu de données.
+
+
+
+== Nom et description de la règle
+
+Nom et description de la stratégie, limités aux caractères suivants :
+
+* a à z
+* A à Z
+* 0 à 9
+* _ (soulignement)
+* - (tiret)
+
+
+
+
+== Limites de conservation des sauvegardes
+
+Vous devez décider de la durée minimale pendant laquelle vous souhaitez conserver vos copies de sauvegarde toutes les heures, tous les jours, toutes les semaines ou tous les mois avant de les supprimer.
+
+
+NOTE: Les sauvegardes dont le type de rétention est « Illimité » ne sont pas supprimées.
+
+Vous pouvez conserver les sauvegardes en fonction du temps ou d'un nombre spécifié. Par exemple, vous pouvez conserver les 10 sauvegardes les plus récentes ou supprimer des sauvegardes de plus de 15 jours.
+
+Si votre système semble conserver d'anciennes sauvegardes, vous devez vérifier vos stratégies de rétention. Tous les objets sauvegardés qui partagent une copie Snapshot doivent répondre aux critères de suppression de sauvegarde de la règle de conservation pour déclencher la suppression d'une copie Snapshot.
+
+
+
+== Nom de la tâche de sauvegarde planifiée
+
+Vous devez attribuer un nom à la tâche de sauvegarde planifiée.
+
+
+
+== Autorisation de planifier des sauvegardes
+
+Vous devez disposer des informations d'identification appropriées pour planifier les sauvegardes des jeux de données.
+
+
+
+== Nombre possible de datasets planifiés pour la sauvegarde simultanément
+
+Si les mêmes machines virtuelles appartiennent à des jeux de données différents, vous ne devez pas planifier de sauvegarde de plusieurs jeux de données contenant simultanément la même machine virtuelle. Dans ce cas, l'une des opérations de sauvegarde échoue. Une seule opération de sauvegarde peut se produire sur un hôte à un moment donné.
+
+
+
+== Type de sauvegarde planifiée
+
+Vous pouvez effectuer une sauvegarde cohérente avec l'application ou après panne.
+
+
+
+== Options de sauvegarde
+
+Une fois la sauvegarde terminée, il vous faut choisir de mettre à jour l'emplacement de destination SnapMirror.
+
+La mise à jour réussit uniquement si SnapMirror est déjà configuré et si les LUN contenant les machines virtuelles du jeu de données appartiennent au volume SnapMirror source.
+
+Le comportement par défaut de SnapManager pour Hyper-V consiste à échouer une sauvegarde si une ou plusieurs machines virtuelles ne peuvent pas être sauvegardées en ligne. Si une machine virtuelle est à l'état enregistré ou arrêtée, vous ne pouvez pas effectuer de sauvegarde en ligne. Dans certains cas, les machines virtuelles sont dans l'état enregistré ou sont arrêtées pour maintenance, mais les sauvegardes doivent toujours continuer, même si une sauvegarde en ligne n'est pas possible. Pour cela, vous pouvez déplacer les machines virtuelles qui sont à l'état enregistré ou les arrêter vers un autre jeu de données avec une stratégie qui permet les sauvegardes d'état enregistré.
+
+Vous pouvez également cocher la case Autoriser la sauvegarde VM à l'état enregistré pour permettre à SnapManager pour Hyper-V de sauvegarder la machine virtuelle à l'état enregistré. Si vous sélectionnez cette option, SnapManager pour Hyper-V n'échoue pas la sauvegarde lorsque Hyper-V VSS Writer sauvegarde la machine virtuelle à l'état enregistré ou effectue une sauvegarde hors ligne de la machine virtuelle. L'exécution d'une sauvegarde à l'état enregistré ou hors ligne peut entraîner des temps d'indisponibilité.
+
+Le `distributed application-consistent backup` La fonctionnalité permet à plusieurs machines virtuelles s'exécutant sur les nœuds de cluster partenaires d'être cohérentes dans une copie Snapshot matérielle unique réalisée à partir du nœud de sauvegarde. Cette fonctionnalité est prise en charge pour tous les VM s'exécutant sur un volume CSV 2.0 Windows sur plusieurs nœuds d'un cluster de basculement Windows. Pour utiliser cette fonction, sélectionnez `Application-consistent` Type de sauvegarde et cochez la case *Activer la sauvegarde distribuée*.
+
+
+
+== Stockage secondaire dans une sauvegarde SnapMirror
+
+Ces options vous permettent d'accepter les options applicables à un stockage secondaire défini dans une relation SnapMirror. Dans cette boîte de dialogue, vous pouvez sélectionner *mettre à jour SnapMirror après sauvegarde*. Dans le volet des options du libellé du coffre-fort, vous pouvez sélectionner *mettre à jour SnapVault après sauvegarde*. Si vous sélectionnez *mettre à jour SnapVault après sauvegarde*, vous devez choisir une étiquette de coffre-fort dans le menu déroulant ou entrer une étiquette personnalisée.
+
+
+
+== Scripts de sauvegarde
+
+Vous devez décider si vous souhaitez que les scripts de sauvegarde facultatifs s'exécutent avant ou après la sauvegarde.
+
+Ces scripts s'exécutent sur tous les hôtes membres du jeu de données, sauf si vous indiquez un serveur spécifique.
+
+Les scripts de sauvegarde s'exécutent sur chaque nœud du dataset. Vous pouvez définir la stratégie de jeu de données pour spécifier le nom de l'hôte sur lequel vous souhaitez exécuter les scripts. La politique est traitée sur chaque nœud du cluster où la machine virtuelle à sauvegarder est exécutée.
+
+image::smhv_policywizard_specified_host.gif[l'hôte spécifié par l'assistant de politique smhv]
+
+Vous pouvez utiliser les variables d'environnement suivantes dans les arguments pour les scripts PostScript de sauvegarde :
+
+* *$VMSnapshot* : indique le nom de la copie Snapshot créée sur le système de stockage à la suite de cette sauvegarde. Lorsque vous effectuez des sauvegardes cohérentes au niveau des applications dans des environnements ONTAP s'exécutant sous 7-mode, nom de la seconde copie Snapshot (sauvegarde). Le premier nom est identique au second nom mais sans le suffixe _backup.
+* *$SnapInfoName* : indique l'horodatage utilisé dans le nom de répertoire SnapInfo.
+* *$SnapInfoSnapshot* : indique le nom de la copie Snapshot SnapInfo créée sur le système de stockage. SnapManager pour Hyper-V effectue une copie Snapshot du LUN SnapInfo à la fin de l'opération de sauvegarde du dataset.
++
+
+NOTE: La variable *$SnapInfoSnapshot* est prise en charge pour les machines virtuelles dédiées uniquement.
+
+
+
+*Informations connexes*
+
+http://technet.microsoft.com/library/cc753637(WS.10).aspx["Microsoft TechNet : Hyper-V"]
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-buvault/home.html["Guide de sauvegarde de volumes ONTAP 9 à l'aide de SnapVault Express"]

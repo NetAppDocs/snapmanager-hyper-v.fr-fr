@@ -1,0 +1,25 @@
+---
+permalink: reference-secondary-machine-unable-to-delete-backups-after-failover.html 
+sidebar: sidebar 
+keywords: deleting, delete, backup, failover 
+summary: Suppression de sauvegardes après le basculement. 
+---
+= Supprimer les sauvegardes après le basculement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Message*
++
+`The specified backup does not exist for some of the objects in the dataset.`
+
+* *Description*
++
+Après le basculement vers un site secondaire (site B), il se peut que vous ne puissiez pas supprimer les sauvegardes créées sur le site primaire (site A). Si vous utilisez un site de reprise sur incident (site B) et que vous tentez de supprimer les sauvegardes effectuées sur le site primaire (site A), vous supprimerez les sauvegardes du site principal (site A) et non du site de reprise sur incident (site B).
+
+* * Action corrective*
++
+Après avoir effectué les opérations de reprise sur incident, supprimez uniquement les sauvegardes effectuées sur votre site actuel.
+
+

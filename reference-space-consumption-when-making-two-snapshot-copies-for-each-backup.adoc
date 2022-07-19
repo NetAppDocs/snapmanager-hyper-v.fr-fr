@@ -1,0 +1,38 @@
+---
+permalink: reference-space-consumption-when-making-two-snapshot-copies-for-each-backup.html 
+sidebar: sidebar 
+keywords: space, consumption, snapshot, copies, copy, backup 
+summary: 'Consommation de l"espace lors de la création de deux copies Snapshot pour chaque sauvegarde.' 
+---
+= Consommation de l'espace lors de la création de deux copies Snapshot pour chaque sauvegarde
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Numéro*
++
+Pour chaque sauvegarde contenant des objets Hyper-V, deux copies Snapshot sont créées, ce qui peut entraîner des problèmes de consommation de l'espace.
+
++
+
+NOTE: Cela s'applique uniquement aux sauvegardes cohérentes au niveau des applications.
+
+* *Cause*
++
+Microsoft Hyper-V VSS Writer crée des copies de sauvegarde cohérentes au niveau des machines virtuelles et des applications au sein des machines virtuelles, avec des applications résidant sur des VHD. Pour créer des copies de sauvegarde cohérentes au niveau logiciel et avec les machines virtuelles, VSS utilise le processus natif d'enregistrement automatique, qui permet de définir la machine virtuelle à un état cohérent avec la copie Snapshot du logiciel. Hyper-V VSS Writer contacte chaque machine virtuelle de la sauvegarde et crée une copie Snapshot cohérente avec le logiciel.
+
++
+Une fois les copies Snapshot créées, la partition parent crée une copie VSS Snapshot de l'ensemble du disque (LUN) qui héberge ces machines virtuelles. Une fois la copie Snapshot de la partition parent créée, VSS requiert le montage de la partition parent précédemment créée, pour restaurer chaque machine virtuelle à un état cohérent avec le logiciel et pour supprimer toutes les modifications apportées aux machines virtuelles après la création de la copie Snapshot du logiciel. Ces modifications des VHD doivent être persistantes. Comme ces copies Snapshot sont en lecture seule par défaut, une nouvelle copie Snapshot doit être effectuée pour conserver les copies mises à jour des VHD. C'est pourquoi une seconde copie Snapshot du volume est créée. Cette copie snapshot porte le suffixe *_backup* et est la copie de sauvegarde utilisée dans les opérations de restauration.
+
+* * Action corrective*
++
+Les deux copies Snapshot sont considérées comme une paire. À la fin de la période de conservation pour la sauvegarde, les deux copies Snapshot sont supprimées. Vous ne devez pas supprimer la première copie Snapshot manuellement, car elle est nécessaire pour les opérations de restauration.
+
++
+Microsoft VSS prend en charge la sauvegarde des machines virtuelles uniquement sur l'hôte qui possède le CSV (Cluster Shared Volume). Ainsi, les droits de propriété CSV sont partagés entre les nœuds pour créer des sauvegardes des machines virtuelles sur chaque hôte du cluster.
+
++
+Lors de la sauvegarde d'un CSV, SnapManager for Hyper-V crée deux copies Snapshot par hôte dans le cluster qui exécute une machine virtuelle à partir de ce CSV. Cela signifie que si vous sauvegardez 15 machines virtuelles sur un seul CSV et que ces machines virtuelles sont réparties uniformément sur trois serveurs Hyper-V, chaque sauvegarde compte au total six copies Snapshot.
+
+

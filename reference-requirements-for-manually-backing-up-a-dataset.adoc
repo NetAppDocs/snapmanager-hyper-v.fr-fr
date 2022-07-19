@@ -1,0 +1,87 @@
+---
+permalink: reference-requirements-for-manually-backing-up-a-dataset.html 
+sidebar: sidebar 
+keywords: backup, dataset, manual, first, name, describe, type, option, retention, policy, requirement 
+summary: 'Pour sauvegarder un jeu de données manuellement, vous devez d"abord nommer et décrire le jeu de données, choisir un type et des options de sauvegarde et définir une stratégie de conservation.' 
+---
+= Conditions requises pour la sauvegarde manuelle d'un dataset
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Pour sauvegarder un jeu de données manuellement, vous devez d'abord nommer et décrire le jeu de données, choisir un type et des options de sauvegarde et définir une stratégie de conservation.
+
+
+
+== Nom et description de la sauvegarde
+
+Vous devez attribuer un nom et une description à la sauvegarde.
+
+la convention de nom par défaut pour les sauvegardes est dataetName_Timestamp. Vous pouvez tout modifier dans le nom de la sauvegarde, à l'exception de l'horodatage qui apparaît toujours dans le nom de la sauvegarde.
+
+Les noms et descriptions des sauvegardes sont limités aux caractères suivants :
+
+* a à z
+* A à Z
+* 0 à 9
+* _ (soulignement)
+* - (tiret)
+
+
+
+
+== Le choix des règles
+
+Vous devez décider de la règle que vous souhaitez utiliser pour la sauvegarde à la demande.
+
+Vous pouvez sélectionner une stratégie spécifique dans l'assistant de sauvegarde. Vous pouvez remplacer la stratégie de rétention ou de réplication, ainsi que les scripts associés à la stratégie, sans modifier la stratégie elle-même.
+
+Vous pouvez également choisir la valeur aucune, ce qui vous permet d'effectuer une sauvegarde à la demande sans créer de règles. Cette option utilise les valeurs par défaut pour les stratégies de rétention, les stratégies de réplication et les scripts.
+
+
+
+== Valeur de conservation
+
+Vous pouvez choisir de remplacer la stratégie de conservation spécifiée dans la stratégie que vous avez sélectionnée. Dans ce cas, vous devez décider de la durée minimale dont vous souhaitez conserver vos copies de sauvegarde toutes les heures, tous les jours, toutes les semaines, tous les mois ou illimitées avant leur suppression.
+
+Vous pouvez conserver les sauvegardes en fonction du temps ou d'un nombre spécifié de sauvegardes. Par exemple, vous pouvez conserver les 10 sauvegardes les plus récentes ou supprimer des sauvegardes de plus de 15 jours.
+
+
+
+== Type de sauvegarde
+
+Vous pouvez effectuer une sauvegarde cohérente avec les applications ou les défaillances.
+
+
+
+== Options de sauvegarde
+
+Vous pouvez autoriser les sauvegardes d'état enregistrées.
+
+Le comportement par défaut de SnapManager pour Hyper-V consiste à échouer une sauvegarde si une ou plusieurs machines virtuelles ne peuvent pas être sauvegardées en ligne. Si une machine virtuelle est à l'état enregistré ou arrêtée, vous ne pouvez pas effectuer de sauvegarde en ligne. Dans certains cas, les machines virtuelles sont à l'état enregistré ou sont arrêtées pour maintenance, mais les sauvegardes doivent toujours continuer, même si une sauvegarde en ligne n'est pas possible. Pour ce faire, vous pouvez déplacer les machines virtuelles qui sont à l'état enregistré ou les arrêter vers un autre jeu de données, l'une avec une stratégie qui permet les sauvegardes d'état enregistré.
+
+Vous pouvez également modifier la stratégie existante en cochant la case Autoriser la sauvegarde VM à l'état enregistré. SnapManager for Hyper-V peut ainsi sauvegarder la machine virtuelle dans l'état enregistré. Si vous sélectionnez cette option, SnapManager pour Hyper-V n'échoue pas la sauvegarde lorsque Hyper-V VSS Writer sauvegarde la machine virtuelle à l'état enregistré ou effectue une sauvegarde hors ligne de la machine virtuelle. L'exécution d'une sauvegarde enregistrée ou hors ligne peut entraîner des temps d'indisponibilité.
+
+Le `distributed application-consistent backup` La fonctionnalité permet à plusieurs machines virtuelles s'exécutant sur les nœuds de cluster partenaires d'être cohérentes dans une seule copie Snapshot matérielle créée à partir du nœud de sauvegarde. Cette fonctionnalité est prise en charge pour tous les VM s'exécutant sur un volume CSV 2.0 Windows sur plusieurs nœuds d'un cluster de basculement Windows.
+
+
+
+== Stockage secondaire dans une sauvegarde SnapMirror
+
+Ces options vous permettent d'accepter les options applicables à un stockage secondaire défini dans une relation SnapMirror. Vous pouvez sélectionner *mettre à jour SnapMirror après sauvegarde*. Dans le volet des options du libellé du coffre-fort, vous pouvez sélectionner *mettre à jour SnapVault après sauvegarde*. Si vous sélectionnez *mettre à jour SnapVault après sauvegarde*, vous devez choisir une étiquette de coffre-fort dans le menu déroulant ou entrer une étiquette personnalisée.
+
+
+
+== Scripts de sauvegarde
+
+Vous pouvez remplacer les options de script spécifiées dans la stratégie que vous avez sélectionnée.
+
+Ces scripts s'exécutent sur tous les hôtes membres du jeu de données, sauf si vous indiquez un hôte spécifique dans le script.
+
+*Informations connexes*
+
+http://technet.microsoft.com/library/cc753637(WS.10).aspx["Microsoft TechNet : Hyper-V"]
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-buvault/home.html["Guide de sauvegarde de volumes ONTAP 9 à l'aide de SnapVault Express"]

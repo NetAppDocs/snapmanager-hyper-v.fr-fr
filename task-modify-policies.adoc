@@ -1,0 +1,26 @@
+---
+permalink: task-modify-policies.html 
+sidebar: sidebar 
+keywords: modify, policies, policy, protect, dataset, wizard 
+summary: 'Vous pouvez modifier les règles qui protègent vos ensembles de données à l"aide de l"assistant Modifier la stratégie.' 
+---
+= Modifier des règles
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez modifier les règles qui protègent vos ensembles de données à l'aide de l'assistant Modifier la stratégie.
+
+.Étapes
+. Dans le volet de navigation, cliquez sur menu :protection[Datasets].
+. Sélectionnez le jeu de données qui contient les règles à modifier.
+. Sélectionnez la stratégie à modifier.
+. Dans le volet actions, cliquez sur *Modifier la stratégie*.
++
+L'assistant Modifier la stratégie s'affiche.
+
+. Suivez les étapes de l'assistant pour modifier la stratégie de protection de votre jeu de données.
+

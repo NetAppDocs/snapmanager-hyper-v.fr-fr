@@ -1,0 +1,14 @@
+---
+permalink: concept-configure-snapmanager-for-hyper-v.html 
+sidebar: sidebar 
+keywords: install, snapmanager, hyper-v, configure, configuring, manage, host, virtual, machine, policies, policy 
+summary: Une fois SnapManager for Hyper-V installé, vous pouvez configurer et gérer vos hôtes et machines virtuelles en ajoutant des règles de protection et de restauration des données. 
+---
+= Configuration de SnapManager pour Hyper-V.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Une fois SnapManager for Hyper-V installé, vous pouvez configurer et gérer vos hôtes et machines virtuelles en ajoutant des règles de protection et de restauration des données.

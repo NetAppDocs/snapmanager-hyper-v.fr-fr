@@ -1,0 +1,24 @@
+---
+permalink: task-view-a-host-report.html 
+sidebar: sidebar 
+keywords: view, report, host, manage, snapmanager, hyper-v 
+summary: Vous pouvez afficher un rapport sur un hôte géré dans SnapManager for Hyper-V. 
+---
+= Afficher un rapport hôte
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez afficher un rapport sur un hôte géré dans SnapManager for Hyper-V.
+
+.Étapes
+. Dans le volet de navigation, cliquez sur menu:Reports[hosts].
+. Sélectionnez l'hôte qui contient le rapport que vous souhaitez afficher.
+. Dans le volet Rapports, sélectionnez le rapport à afficher et cliquez sur *Afficher le rapport*.
++
+Le rapport de configuration apparaît dans une fenêtre distincte.
+
+

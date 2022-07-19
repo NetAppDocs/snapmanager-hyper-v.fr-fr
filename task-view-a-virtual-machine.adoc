@@ -1,0 +1,25 @@
+---
+permalink: task-view-a-virtual-machine.html 
+sidebar: sidebar 
+keywords: virtual, machine, tab, vhd, detail, pane, vm, information, monitor, status, view 
+summary: 'À partir de l"onglet machine virtuelle et de l"onglet VHD du volet Détails d"une machine virtuelle, vous pouvez afficher et contrôler l"état de cette machine.' 
+---
+= Afficher une machine virtuelle
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+À partir de l'onglet machine virtuelle et de l'onglet VHD du volet Détails d'une machine virtuelle, vous pouvez afficher et contrôler l'état de cette machine.
+
+.Étapes
+. Dans le volet de navigation, cliquez sur menu :protection[hôtes > protection > datasets].
+. Sélectionnez le jeu de données ou l'hôte auquel appartient la machine virtuelle.
+. Sélectionnez la machine virtuelle appropriée.
+
+
+L'onglet machine virtuelle affiche le nom, le GUID et l'état de la machine virtuelle sélectionnée.
+
+L'onglet VHD affiche le disque système, le point de montage, le chemin complet du VHD, le chemin LUN, le nom du système de stockage, le numéro de série et le nom du volume associés à la machine virtuelle sélectionnée.

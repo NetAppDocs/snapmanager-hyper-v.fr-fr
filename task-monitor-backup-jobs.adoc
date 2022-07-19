@@ -1,0 +1,28 @@
+---
+permalink: task-monitor-backup-jobs.html 
+sidebar: sidebar 
+keywords: view, schedule, job, particular, dataset, management, window, schedule, tab, backup, monitor, backup 
+summary: 'Vous pouvez afficher les tâches de sauvegarde planifiées pour un jeu de données particulier à l"aide de l"onglet planification de la fenêtre gestion des travaux. Vous pouvez également afficher les tâches de sauvegarde et de restauration en cours d"exécution à l"aide de l"onglet en cours de la fenêtre gestion des travaux.' 
+---
+= Surveiller les tâches de sauvegarde
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez afficher les tâches de sauvegarde planifiées d'un jeu de données particulier à l'aide de l'onglet planification de la fenêtre gestion des travaux. Vous pouvez également afficher les tâches de sauvegarde et de restauration en cours d'exécution à l'aide de l'onglet Running de la fenêtre gestion des travaux.
+
+.Étapes
+. Dans le volet de navigation, cliquez sur *travaux*.
+. Cliquez sur l'onglet *programmé* ou *en cours d'exécution*.
+. Sélectionnez la tâche de sauvegarde planifiée ou en cours d'exécution ou la tâche de restauration que vous souhaitez contrôler.
++
+Des informations sur le travail s'affichent dans le volet Détails.
+
+. Utilisez le rapport travail en cours d'exécution dans la vue *Rapports*, si vous souhaitez afficher un rapport en temps réel d'un travail en cours d'exécution.
++
+
+NOTE: Vous pouvez également surveiller les tâches de sauvegarde à l'aide de la console SCOM de Microsoft. Consultez le site Web de Microsoft pour plus d'informations.
+
+
