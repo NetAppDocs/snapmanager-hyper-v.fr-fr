@@ -10,6 +10,7 @@ summary: Forte consommation de mémoire provoquée par la solution antivirus.
 :imagesdir: ./media/
 
 
+[role="lead"]
 * *Numéro*
 +
 Les solutions antivirus au niveau des fichiers peuvent entraîner une forte consommation de mémoire, ce qui peut sembler une fuite de mémoire.

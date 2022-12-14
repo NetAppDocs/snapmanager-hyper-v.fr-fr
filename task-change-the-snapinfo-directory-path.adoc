@@ -14,6 +14,7 @@ summary: 'Vous pouvez contrôler les paramètres du chemin d"accès au répertoi
 [role="lead"]
 Vous pouvez contrôler les paramètres du chemin d'accès au répertoire SnapInfo à l'aide de l'assistant de configuration ou de l'action *SnapInfo*.
 
+.Description de la tâche
 Les paramètres du répertoire SnapInfo sont spécifiés au niveau de l'hôte dans SnapManager pour Hyper-V. SnapManager pour Hyper-V prend en charge les hôtes NAS (SMB) et les hôtes SAN. Pour les hôtes SAN, les paramètres SnapInfo sont appliqués au niveau du volume. Pour les hôtes NAS, les paramètres SnapInfo sont appliqués au niveau du partage SMB.
 
 Si vous avez ajouté l'adresse IP du système de stockage dans SnapDrive pour TPS Windows, les paramètres de stockage de SnapDrive pour Windows sont automatiquement renseignés lorsque vous exécutez l'assistant de configuration dans SnapManager pour Hyper-V. Si SnapDrive for Windows TPS n'est pas configuré, vous devez spécifier l'adresse IP du système de stockage dans l'onglet gérer les connexions de stockage de SnapManager for Hyper-V.

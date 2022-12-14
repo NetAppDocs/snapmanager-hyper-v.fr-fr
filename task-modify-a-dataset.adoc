@@ -14,6 +14,7 @@ summary: Une fois que vous avez créé un jeu de données, vous pouvez modifier 
 [role="lead"]
 Une fois que vous avez créé un jeu de données, vous pouvez modifier la description du jeu de données et les ressources associées au jeu de données.
 
+.Description de la tâche
 La case à cocher Valider le jeu de données est sélectionnée par défaut. SnapManager for Hyper-V vérifie s'il existe des erreurs de configuration dans toutes les VM lors de la création ou de la modification d'un jeu de données. Vous devez vous assurer que la case n'est pas cochée si vous ne souhaitez pas activer la validation du jeu de données.
 
 .Étapes

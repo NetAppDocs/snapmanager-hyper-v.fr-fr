@@ -13,6 +13,7 @@ summary: 'Pour effectuer une restauration après incident, SnapManager pour Hype
 [role="lead"]
 Pour effectuer une restauration après incident, SnapManager pour Hyper-V doit d'abord basculer vers un système de stockage secondaire. Le basculement implique parfois une série d'étapes manuelles dans PowerShell.
 
+.Description de la tâche
 La plupart des sauvegardes peuvent être restaurées sur un autre hôte pour NAS et SAN. Cependant, il n'est pas possible de restaurer des sauvegardes cohérentes avec les défaillances de Windows Server 2008 R2 sur un autre hôte.
 
 .Étapes

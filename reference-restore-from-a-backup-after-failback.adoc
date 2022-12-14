@@ -10,6 +10,7 @@ summary: 'Restauration à partir d"une sauvegarde après restauration.'
 :imagesdir: ./media/
 
 
+[role="lead"]
 * *Numéro*
 +
 Si vous effectuez un basculement et un retour arrière, il est possible que vous ne puissiez pas restaurer des machines virtuelles sur votre site primaire à partir d'une sauvegarde créée sur le même site primaire, avant le basculement.

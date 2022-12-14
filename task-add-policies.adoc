@@ -14,6 +14,7 @@ summary: Vous pouvez ajouter des règles de conservation, de planification et de
 [role="lead"]
 Vous pouvez ajouter des règles de conservation, de planification et de réplication, ainsi que des scripts à vos jeux de données pour protéger vos données.
 
+.Ce dont vous avez besoin
 Vous devez disposer des informations suivantes :
 
 * Noms et descriptions des politiques

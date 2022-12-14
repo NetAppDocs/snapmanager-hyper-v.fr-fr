@@ -1182,4 +1182,9 @@
   <block id="9d7345ae7324f5991caf56c819eb5f09" category="sidebar">Effectuer des restaurations et des récupérations à partir d'un basculement de reprise sur incident</block>
   <block id="bc75d43ed20a1ef476a229e08f6582f1" category="sidebar">La sauvegarde a échoué pour la ou les machines virtuelles suivantes, car elle ne peut pas faire l'objet d'une sauvegarde en ligne ou si aucune machine virtuelle n'est trouvée pour la sauvegarde</block>
   <block id="4f9d4ca3184d1887e8be4f7de3aa95bf" category="sidebar">Échec de la sauvegarde avec l'erreur "la création de clichés instantanés est déjà en cours"</block>
+  <block id="d59db7846bd10b6d60d21543df9faa9e" category="paragraph-title">Ce dont vous avez besoin</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">Description de la tâche</block>
+  <block id="fd69c5cf902969e6fb71d043085ddee6" category="paragraph-title">Résultats</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Résultat</block>
+  <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">Une fois que vous avez terminé</block>
 </blocks>

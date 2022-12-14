@@ -14,6 +14,7 @@ summary: 'Vous pouvez créer une sauvegarde à la demande d"un jeu de données.'
 [role="lead"]
 Vous pouvez créer une sauvegarde à la demande d'un jeu de données.
 
+.Ce dont vous avez besoin
 Vous devez disposer des informations suivantes :
 
 * Nom et description de la sauvegarde
@@ -35,4 +36,5 @@ La fermeture de l'assistant n'annule pas la sauvegarde à la demande.
 
 
 
+.Résultats
 Vous pouvez afficher l'état de la sauvegarde à la demande dans la fenêtre gestion des travaux.

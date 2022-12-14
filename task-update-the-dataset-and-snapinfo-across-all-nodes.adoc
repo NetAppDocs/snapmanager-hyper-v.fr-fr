@@ -13,6 +13,7 @@ summary: 'Une fois la mise à niveau du système d"exploitation de cluster effec
 [role="lead"]
 Une fois la mise à niveau du système d'exploitation de cluster effectuée, vous devez mettre à jour le dataset et SnapInfo sur tous les nœuds.
 
+.Ce dont vous avez besoin
 ++ ++
 
 

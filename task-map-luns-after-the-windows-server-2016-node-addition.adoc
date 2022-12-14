@@ -13,6 +13,7 @@ summary: 'Lorsque vous effectuez une mise à niveau propagée du système d"expl
 [role="lead"]
 Lorsque vous effectuez une mise à niveau propagée du système d'exploitation du cluster, vous pouvez suivre la procédure suivante pour annuler le mappage des LUN à partir du nœud Windows 2012 R2 et les remappage vers le nœud Windows Server 2016 une fois qu'elles ont été ajoutées au cluster.
 
+.Ce dont vous avez besoin
 Le nœud Windows Server 2016 doit être ajouté au cluster.
 
 

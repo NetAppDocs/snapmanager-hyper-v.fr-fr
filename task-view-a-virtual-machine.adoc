@@ -20,6 +20,7 @@ summary: 'À partir de l"onglet machine virtuelle et de l"onglet VHD du volet D�
 . Sélectionnez la machine virtuelle appropriée.
 
 
+.Résultats
 L'onglet machine virtuelle affiche le nom, le GUID et l'état de la machine virtuelle sélectionnée.
 
 L'onglet VHD affiche le disque système, le point de montage, le chemin complet du VHD, le chemin LUN, le nom du système de stockage, le numéro de série et le nom du volume associés à la machine virtuelle sélectionnée.

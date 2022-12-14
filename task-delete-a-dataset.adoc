@@ -14,6 +14,7 @@ summary: Vous pouvez supprimer un jeu de données à mesure que vos besoins de p
 [role="lead"]
 Vous pouvez supprimer un jeu de données à mesure que vos besoins de protection évoluent.
 
+.Description de la tâche
 La suppression d'un jeu de données ne supprime pas les machines virtuelles appartenant au jeu de données. Une fois le dataset supprimé, les machines virtuelles qui l'appartenaient deviennent non protégées s'elles n'appartenaient pas à un autre jeu de données.
 
 .Étapes
@@ -25,4 +26,5 @@ La suppression du jeu de données supprime également les travaux planifiés de 
 
 
 
+.Résultats
 SnapManager pour Hyper-V ne protège plus les ressources associées au jeu de données supprimé, sauf si ces ressources appartiennent à un autre jeu de données.

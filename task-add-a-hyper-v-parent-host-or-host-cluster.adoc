@@ -19,6 +19,7 @@ Vous pouvez ajouter un hôte ou un cluster hôte parent Hyper-V pour sauvegarder
 . Exécutez l'assistant *Ajouter hôte*.
 
 
+.Une fois que vous avez terminé
 Lorsque vous ajoutez un hôte à un cluster, les informations relatives au nouvel hôte ne s'affichent pas automatiquement dans l'interface graphique. Ajoutez manuellement les informations sur l'hôte au fichier xml dans le répertoire d'installation.
 
 SnapManager pour Hyper-V doit être installé sur chaque nœud du cluster. Si SnapManager pour Hyper-V n'est pas installé, vous êtes invité à exécuter l'assistant d'installation d'hôte à distance.

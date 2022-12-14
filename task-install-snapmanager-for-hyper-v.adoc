@@ -13,6 +13,7 @@ summary: 'Vous pouvez installer SnapManager pour Hyper-V afin d"être en mesure 
 [role="lead"]
 Vous pouvez installer SnapManager pour Hyper-V afin d'être en mesure de sauvegarder et de restaurer vos données. Vous devez installer SnapDrive pour Windows avant d'installer SnapManager pour Hyper-V.
 
+.Ce dont vous avez besoin
 Vos données existantes doivent être sauvegardées et les informations suivantes doivent être disponibles :
 
 * Clé de licence

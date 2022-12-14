@@ -13,6 +13,7 @@ summary: 'Vous pouvez utiliser SnapManager pour Hyper-V, qui restaure à la fois
 [role="lead"]
 Vous pouvez utiliser SnapManager pour Hyper-V, qui restaure à la fois une seule machine virtuelle afin de récupérer les données perdues ou endommagées à partir d'une copie de sauvegarde.
 
+.Ce dont vous avez besoin
 Vous devez disposer des informations suivantes :
 
 * Nom de la sauvegarde
@@ -22,6 +23,7 @@ Vous devez disposer des informations suivantes :
 
 Lors d'une restauration sur un autre hôte, le type de CPU du PC physique sur lequel résidait la machine virtuelle d'origine doit être compatible avec l'ordinateur physique sur lequel vous souhaitez restaurer la machine virtuelle. Vous pouvez également utiliser Hyper-V Manager pour spécifier que la machine est autorisée à restaurer une machine avec un autre type de CPU.
 
+.Description de la tâche
 Une fois le stockage en direct migré, vous ne pouvez plus effectuer la restauration à partir de la dernière sauvegarde.
 
 Si vous lancez une opération de restauration d'une machine virtuelle Hyper-V et qu'une autre sauvegarde ou restauration de la même machine virtuelle est en cours, elle échoue.
@@ -39,6 +41,7 @@ La fermeture de l'assistant n'annule pas l'opération de restauration. SnapManag
 
 
 
+.Une fois que vous avez terminé
 Vous pouvez afficher l'état de l'opération de restauration dans la fenêtre *gestion des travaux* ou vérifier les résultats de l'opération en visualisant le rapport dans la fenêtre *gestion des rapports*.
 
 *Informations connexes*

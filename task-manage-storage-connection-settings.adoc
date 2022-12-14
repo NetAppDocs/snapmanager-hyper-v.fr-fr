@@ -14,6 +14,7 @@ summary: 'Après avoir ajouté un hôte, vous devez entrer toutes les connexions
 [role="lead"]
 Une fois que vous avez ajouté un hôte, vous devez entrer toutes les connexions de stockage (SnapDrive pour Windows et SnapManager pour Hyper-V) pour utiliser gérer les paramètres de connexion de stockage dans le menu:protection[gestion de jeu de données].
 
+.Ce dont vous avez besoin
 Pour gérer vos paramètres de connexion du stockage, vous devez avoir ajouté au moins un hôte à SnapManager for Hyper-V.
 
 .Étapes

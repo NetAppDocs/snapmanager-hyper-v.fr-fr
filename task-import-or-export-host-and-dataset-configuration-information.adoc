@@ -13,6 +13,7 @@ summary: 'Bien que vous ne devriez gérer un hôte qu"à partir d"une seule cons
 [role="lead"]
 Bien que vous ne devriez gérer un hôte qu'à partir d'une seule console de gestion, si vous devez le faire à partir de plusieurs consoles, vous pouvez importer et exporter des informations de configuration d'hôtes et de jeux de données d'une console de gestion à distance vers une autre pour garantir la cohérence des données.
 
+.Description de la tâche
 Vous ne devez ni importer ni exporter les informations de configuration dans le répertoire sur lequel SnapManager for Hyper-V est installé. Si vous désinstallez SnapManager pour Hyper-V, ce fichier est perdu.
 
 
